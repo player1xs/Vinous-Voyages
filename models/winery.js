@@ -15,7 +15,8 @@ const reviewSchema = new mongoose.Schema({
 const winerySchema = new mongoose.Schema({
   name: { type: String, required: true },
   country: { type: String, required: true }, //required for sort function
-  region: { type: String, required: true },
+  region: { type: String, reuired: true },
+  appelation: String,
   variatalsGrown: [String],
   cuvee: [String],
   image: String,
