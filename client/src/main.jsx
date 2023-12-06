@@ -1,6 +1,13 @@
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
+// Page components
+import App from './App'
+import Home from './components/Home'
+import WineryIndex from './components/WineryIndex'
+import WinerySingle from './components/WinerySingle'
+import Register from './components/Register'
+import Login from './components/Login'
 
 const router = createBrowserRouter([
   {
