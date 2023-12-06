@@ -16,7 +16,7 @@ app.use('/api', router)
 
 async function startServer() {
   try {
-    await mongoose.connect(process.env.CONNETION_STRING)
+    await mongoose.connect(process.env.CONNECTION_STRING)
     console.log('Well done Benedict. You are a genius')
     app.listen(process.env.PORT, () => console.log(`server listening on port ${process.env.PORT}`))
   } catch (error) {

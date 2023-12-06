@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 const reviewSchema = new mongoose.Schema({
   text: { type: String, required: true, maxlength: 300 },
   rating: { type: Number, required: true, min: 1, max: 100 },
-  owner: { type: mongoose.isObjectIdOrHexString, ref: 'User', required: true },
+  owner: { type: mongoose.ObjectId, ref: 'User', required: true },
 }, {
   timestamps: true,
 })
@@ -15,7 +15,7 @@ const reviewSchema = new mongoose.Schema({
 const winerySchema = new mongoose.Schema({
   name: { type: String, required: true },
   country: { type: String, required: true }, //required for sort function
-  region: { type: String, reuired: true },
+  region: { type: String, required: true },
   appelation: String,
   variatalsGrown: [String],
   cuvee: [String],
@@ -26,7 +26,7 @@ const winerySchema = new mongoose.Schema({
   //maybe address - lets see how the map looks
   nearbyCity: String,
   attractions: [String],
-  owner: { type: mongoose.ObjectId, ref: 'User', reuired: true },
+  owner: { type: mongoose.ObjectId, ref: 'User', required: true },
   reviews: [reviewSchema],
 })
 
