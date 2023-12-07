@@ -2,7 +2,7 @@ export default [
   {
     username: 'admin',
     email: 'admin@email.com',
-    password: 'WinerFinery',
+    password: 'WineryFinery',
     passwordConfirmation: 'WineryFinery',
   },
   {

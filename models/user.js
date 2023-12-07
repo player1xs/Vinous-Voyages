@@ -32,6 +32,7 @@ userSchema
 //pre-validate
 userSchema.pre('validate', function(next) {
   if (this.isModified('password') && this.password !== this._passwordConfirmation) {
+    console.log(this.password, this._passwordConfirmation)
     this.invalidate('passwordConfirmation', 'Make sure the passwords match')
   }
   next()

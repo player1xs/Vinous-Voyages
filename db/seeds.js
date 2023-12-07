@@ -18,7 +18,7 @@ async function seed() {
     console.log(`deleted ${deletedUserCount} users from the database`)
 
     const usersCreated = await User.create(userData)
-    console.log(`seeded ${usersCreated} users to the database`)
+    console.log(`seeded ${usersCreated.length} users to the database`)
 
     const ownedWineries = wineryData.map(winery => {
       const randomUserIndex = Math.floor(Math.random() * usersCreated.length)
