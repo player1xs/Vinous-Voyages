@@ -64,7 +64,7 @@ export const updateWinery = async (req, res) => {
 export const deleteWinery = async (req, res) => {
   try {
     const { wineryId } = req.params
-    const winery = await Winery.findOneAndDelete({ _id: wineryId, owner: req.currentuser._id })
+    const winery = await Winery.findOneAndDelete({ _id: wineryId, owner: req.currentUser._id })
     if (!winery) {
       return res.status(404).json({ message: 'Vingernon Introuvable OR Unauthorized' })
     }
