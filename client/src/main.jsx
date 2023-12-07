@@ -10,7 +10,7 @@ import Register from './components/Register'
 import Login from './components/Login'
 
 // Loaders
-// import { getAllWineries, getSingleWinery } from './utils/loaders/winery'
+import { getAllWineries, getSingleWinery } from './utils/loaders/winery'
 
 const router = createBrowserRouter([
   {
@@ -23,13 +23,13 @@ const router = createBrowserRouter([
       },
       {
         path: '/wineryIndex',
-        element: <WineryIndex />
-        // loader: getAllWineries
+        element: <WineryIndex />,
+        loader: getAllWineries
       },
       {
         path: '/wineryIndex/:wineryId',
-        element: <WinerySingle />
-        // loader: async ({ params }) => getSingleWinery(params.wineryId)
+        element: <WinerySingle />,
+        loader: async ({ params }) => getSingleWinery(params.wineryId)
       },      {
         path: '/register',
         element: <Register />
