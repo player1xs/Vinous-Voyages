@@ -14,6 +14,9 @@ import UserIcon from './components/UserPage'
 // Loaders
 import { getAllWineries, getSingleWinery } from './utils/loaders/winery'
 
+// Actions
+import { registerUser, loginUser } from './utils/actions/auth'
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -35,11 +38,13 @@ const router = createBrowserRouter([
         loader: async ({ params }) => getSingleWinery(params.wineryId)
       },      {
         path: '/register',
-        element: <Register />
+        element: <Register />,
+        action: async ({ request }) => registerUser(request)
       },
       {
         path: '/login',
-        element: <Login />
+        element: <Login />,
+        action: async ({ request }) => loginUser(request)
       },
       {
         path: '/user',
