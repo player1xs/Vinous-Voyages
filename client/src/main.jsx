@@ -13,7 +13,7 @@ import Login from './components/Login'
 import { getAllWineries, getSingleWinery } from './utils/loaders/winery'
 
 // Actions
-import { registerUser } from './utils/actions/auth'
+import { registerUser, loginUser } from './utils/actions/auth'
 
 const router = createBrowserRouter([
   {
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
-        
+        action: async ({ request }) => loginUser(request)
       }
     ]
   }
