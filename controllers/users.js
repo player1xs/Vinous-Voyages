@@ -4,6 +4,11 @@ import jwt from 'jsonwebtoken'
 
 export const register = async (req, res) => {
   try {
+    const { username, email } = req.body
+
+    if (await User.findOne({ username }).exec()) return res.status(403).json({ message: 'Username already registered' })
+    if (await User.findOne({ email }).exec()) return res.status(403).json({ message: 'Email already registered' })
+
     const newUser = await User.create(req.body)
     return res.status(201).json({ message: `Welcome ${newUser.username}` })
   } catch (error) {

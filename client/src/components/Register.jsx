@@ -26,7 +26,7 @@ export default function Register() {
         <input type='password' name='passwordConfirmation' placeholder='confirm password' />
         <button className='btn btn-grey' type='submit'>register</button>
         {/* Below will return a message to user if username taken, etc. Need to set this up. */}
-        {/* {res && <p className='danger'>{res.data.message}</p>} */}
+        {res && <p className='danger'>{res.data.message}</p>}
         </Form>
       </>
     )
