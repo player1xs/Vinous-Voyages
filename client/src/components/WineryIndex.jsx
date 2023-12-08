@@ -1,9 +1,9 @@
-// import { useLoaderData } from 'react-router-dom'
+import { useLoaderData } from 'react-router-dom'
 
 export default function WineryIndex(){
 
-  // const wineries = useLoaderData()
-  // console.log(wineries)
+  const wineries = useLoaderData()
+  console.log(wineries)
 
   return (
     <> 
