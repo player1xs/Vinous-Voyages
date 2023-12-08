@@ -1,7 +1,13 @@
+
+
 export default function Home() {
+
+
   return (
-    <section>
-      <h1>Vinous Voyages</h1>
-    </section>
+    <>
+      <section>
+        <h1>Home page</h1>
+      </section>
+    </>
   )
 }

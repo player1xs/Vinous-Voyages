@@ -8,6 +8,8 @@ import WineryIndex from './components/WineryIndex'
 import WinerySingle from './components/WinerySingle'
 import Register from './components/Register'
 import Login from './components/Login'
+import ErrorPage from './components/ErrorPage'
+import UserIcon from './components/UserPage'
 
 // Loaders
 import { getAllWineries, getSingleWinery } from './utils/loaders/winery'
@@ -16,6 +18,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
@@ -37,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />
+      },
+      {
+        path: '/user',
+        element: <UserIcon />
       }
     ]
   }
