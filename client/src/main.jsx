@@ -8,14 +8,20 @@ import WineryIndex from './components/WineryIndex'
 import WinerySingle from './components/WinerySingle'
 import Register from './components/Register'
 import Login from './components/Login'
+import ErrorPage from './components/ErrorPage'
+import UserIcon from './components/UserPage'
 
 // Loaders
 import { getAllWineries, getSingleWinery } from './utils/loaders/winery'
+
+// Actions
+import { registerUser, loginUser } from './utils/actions/auth'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
@@ -32,11 +38,17 @@ const router = createBrowserRouter([
         loader: async ({ params }) => getSingleWinery(params.wineryId)
       },      {
         path: '/register',
-        element: <Register />
+        element: <Register />,
+        action: async ({ request }) => registerUser(request)
       },
       {
         path: '/login',
-        element: <Login />
+        element: <Login />,
+        action: async ({ request }) => loginUser(request)
+      },
+      {
+        path: '/user',
+        element: <UserIcon />
       }
     ]
   }

@@ -4,6 +4,11 @@ import jwt from 'jsonwebtoken'
 
 export const register = async (req, res) => {
   try {
+    const { username, email } = req.body
+
+    if (await User.findOne({ username }).exec()) return res.status(403).json({ message: 'Username already registered' })
+    if (await User.findOne({ email }).exec()) return res.status(403).json({ message: 'Email already registered' })
+
     const newUser = await User.create(req.body)
     return res.status(201).json({ message: `Welcome ${newUser.username}` })
   } catch (error) {
@@ -19,7 +24,7 @@ export const login = async (req, res) => {
       throw new Error(!userToLogin ? 'Email not found' : 'Passwords don\'t match')
     }
     const token = jwt.sign({ sub: userToLogin._id }, process.env.SECRET, { expiresIn: '10d' })
-    return res.json({ message: `Welcome ${userToLogin.username}`, token: token })
+    return res.status(202).json({ message: `Welcome ${userToLogin.username}`, token: token })
   } catch (error) {
     console.log(error)
     return res.status(401).json({ message: 'Unauthorized' })
