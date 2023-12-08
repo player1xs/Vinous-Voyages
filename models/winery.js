@@ -17,13 +17,13 @@ const winerySchema = new mongoose.Schema({
   country: { type: String, required: true }, //required for sort function
   region: { type: String, required: true },
   appelation: String,
-  variatalsGrown: [String],
-  cuvee: [String],
+  varietalsGrown: [String],
+  range: [String],
   image: String,
   about: { type: String, required: true },
   phone: Number,
   website: String,
-  //maybe address - lets see how the map looks
+  address: String,
   nearbyCity: String,
   attractions: [String],
   owner: { type: mongoose.ObjectId, ref: 'User', required: true },

@@ -17,7 +17,7 @@ export default function WineryIndex(){
 
   useEffect(() => {
     const ids = allWineries.map(winery => {
-      return winery.idWinery
+      return winery._id
     })
     setIdList(ids)
   }, [allWineries])
@@ -29,9 +29,9 @@ export default function WineryIndex(){
 
   return (
     <> 
-      <h2> Select your next Oenologic Adventure... </h2>
+      <h2> Select your next Oenologic Adventures... </h2>
       <div className="filter-bar">
-        <Link to={`/wineryIndex/${idRnd}`} className="randomBtn"></Link>
+        <Link to={`/wineryIndex/${idRnd}`} className="randomBtn">Random</Link>
       </div>
       <Container fluid className='wineryList overflow-auto'>
         { allWineries.map(winery => {
@@ -40,10 +40,11 @@ export default function WineryIndex(){
           <Col
           key = {_id}
           as= {Link}
-          style = { { backgroundImage: `url(${image})` } }
           to={`/wineryIndex/${_id}`}
           >
-            <div className="name">{name}</div>
+            <div className="name" style={ { backgroundImage: `url(${image})` } }>
+              <div>{name}</div>
+            </div>
           </Col>
         )
         })}

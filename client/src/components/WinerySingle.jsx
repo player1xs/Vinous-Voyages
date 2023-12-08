@@ -1,5 +1,3 @@
-import { useLoaderData } from 'react-router-dom'
-
 import { useLoaderData, Link } from "react-router-dom"
 
 export default function WinerySingle() {
@@ -7,7 +5,7 @@ export default function WinerySingle() {
   // const winery = useLoaderData()
   // console.log(winery)
 const winery = useLoaderData()
-const { name, about, region, appelation, variatalsGrown, image } = winery
+const { name, about, region, appelation, varietalsGrown, image } = winery
   return (
     <>
       <div className="sglHeader">
@@ -21,7 +19,7 @@ const { name, about, region, appelation, variatalsGrown, image } = winery
           <p className="appelation">{ appelation }</p>
           <p className="instructions">{ about }</p>
           <ul className="varietals">
-            {variatalsGrown.map((item, idx) => {
+            {varietalsGrown.map((item, idx) => {
               return <li key={idx}>{item}</li>
             })}
           </ul>
