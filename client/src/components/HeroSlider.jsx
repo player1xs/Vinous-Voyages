@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import { Carousel } from "react-responsive-carousel";
+import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import "../styles/components/HeroSlider.scss"
 

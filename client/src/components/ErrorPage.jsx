@@ -7,7 +7,7 @@ export default function ErrorPage() {
   return (
     <>
       <div id='error-page'>
-        <h1><i>{error.status.text || error.message}</i></h1>
+        <h1><i>{error.statusText || error.message}</i></h1>
         <p>Sorry, an unexpected error has occurred.</p>
       </div>
     </>

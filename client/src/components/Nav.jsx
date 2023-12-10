@@ -33,8 +33,8 @@ export default function Nav() {
           <nav onClick={() => setShow(false)}>
             <Link to='/'>Home</Link>&nbsp;
             <Link to='/wineryIndex'>Winery index</Link>&nbsp;
-            <Link to='/login'>Log-in</Link>&nbsp;
-            <Link to='/register'>Register</Link>&nbsp;
+            {/* <Link to='/login'>Log-in</Link>&nbsp;
+            <Link to='/register'>Register</Link>&nbsp; */}
           </nav>
         </Model.Header>
       </Model>
