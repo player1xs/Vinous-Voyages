@@ -1,3 +1,17 @@
-// .leaflet-container {
-//   height: 400px;
-// }
+.leaflet-container {
+  height: 400px;
+}
+
+.popUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cluster-icon {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: aliceblue;
+}

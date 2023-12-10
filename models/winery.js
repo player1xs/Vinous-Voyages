@@ -24,6 +24,7 @@ const winerySchema = new mongoose.Schema({
   phone: Number,
   website: String,
   address: String,
+  geocode: [Number],
   nearbyCity: String,
   attractions: [String],
   owner: { type: mongoose.ObjectId, ref: 'User', required: true },
