@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import Model from 'react-bootstrap/Modal'
 import Modal from 'react-bootstrap/Modal'
 
+// import { FaCircleUser } from 'react-icons/fa6'
 import Button from 'react-bootstrap/Button'
 import userIcon from '../images/image.png'
 import { Form } from 'react-router-dom'
@@ -11,6 +12,7 @@ export default function Nav() {
 
   const [show, setShow] = useState(false)
   const [modalShow, setModalShow] = useState(false)
+  
 
   return (
     <>
@@ -23,7 +25,7 @@ export default function Nav() {
           <span></span>
         </button>
         <Button className="me-4 mb-4" onClick={() => setModalShow(true)}>
-          <Link to='/'><img className='logo' src={userIcon} alt='user icon' /></Link>
+          <Link to='/'><img className='logo' src={ userIcon}  height='50' alt='user icon' /></Link>
         </Button>
       </header>
       <Model show={show} fullscreen={true} onHide={() => setShow(false)}>

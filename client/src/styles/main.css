@@ -1,11 +1,88 @@
 h2 {
-  font-size: 50;
+  font-size: 30px;
+  font-family: "Cinzel", serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wineryList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 25px 20px;
+  border-radius: 1%;
+  height: 80vh;
+  scrollbar-width: none;
+}
+
+.single {
+  width: 100px;
+  height: 175px;
+  margin: 10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  box-shadow: 0px 20px 30px -10px rgba(0, 0, 0, 0.9);
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.name {
+  text-decoration: none;
+  color: white;
+}
+
+h1 a {
+  font-size: 40px;
+  font-family: "Dancing Script", cursive;
+  text-decoration: none;
+  color: rgb(106, 5, 5);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(37, 37, 37);
+  color: rgb(159, 159, 159);
+  text-align: center;
+  margin-bottom: 0 !important;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background-color: fuchsia;
-}
-
-body {
-  background-color: fuchsia;
+  background-color: #a8b56b;
+  margin: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("../images/bliss hill.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
 }/*# sourceMappingURL=main.css.map */

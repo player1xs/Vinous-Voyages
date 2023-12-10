@@ -1,3 +1,5 @@
+import HeroSlider from "./HeroSlider.jsx";
+// import MapContainer from "./Mapbox.jsx";
 
 
 export default function Home() {
@@ -6,7 +8,9 @@ export default function Home() {
   return (
     <>
       <section>
-        <h1>Home page</h1>
+        <HeroSlider />
+        <p>some random text</p>
+        {/* <MapContainer /> */}
       </section>
     </>
   )

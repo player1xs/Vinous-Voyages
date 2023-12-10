@@ -1,1 +1,13 @@
-/*# sourceMappingURL=Nav.css.map */
+h1 a {
+  font-size: 40px;
+  font-family: "Dancing Script", cursive;
+  text-decoration: none;
+  color: rgb(106, 5, 5);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=Nav.css.map */

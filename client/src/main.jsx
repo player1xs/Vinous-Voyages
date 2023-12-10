@@ -1,6 +1,9 @@
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
+
+import './styles/main.scss'
+
 // Page components
 import App from './App'
 import Home from './components/Home'
@@ -25,7 +28,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />
+        element: <Home />,
+        loader: getAllWineries
       },
       {
         path: '/wineryIndex',
