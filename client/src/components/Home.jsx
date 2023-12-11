@@ -1,5 +1,5 @@
 import HeroSlider from "./HeroSlider.jsx";
-// import MapContainer from "./Mapbox.jsx";
+import MapContainer from "./Mapbox.jsx";
 
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <section>
         <HeroSlider />
         <p>some random text</p>
-        {/* <MapContainer /> */}
+        <MapContainer />
       </section>
     </>
   )

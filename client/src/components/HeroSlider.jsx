@@ -21,8 +21,8 @@ export default function HeroSlider() {
     <div className="box">
       <Carousel useKeyboardArrows={true}>
         {images.map((URL, index) => (
-          <div className="slide">
-            <img alt="sample" src={URL} key={index} />
+          <div className="slide" key={index} >
+            <img alt="sample" src={URL} />
             <p className='text-about'>SOME BUTTON</p>
             
           </div>
