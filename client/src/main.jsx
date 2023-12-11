@@ -9,7 +9,7 @@ import App from './App'
 import Home from './components/Home'
 import WineryIndex from './components/WineryIndex'
 import WinerySingle from './components/WinerySingle'
-import CreateWinery from './components/CreateWinery'
+import WineryCreate from './components/WineryCreate'
 import Register from './components/Register'
 import Login from './components/Login'
 import ErrorPage from './components/ErrorPage'
@@ -19,6 +19,7 @@ import { getAllWineries, getSingleWinery } from './utils/loaders/winery'
 
 // Actions
 import { registerUser, loginUser } from './utils/actions/auth'
+import { createWinery } from './utils/actions/winery'
 
 const router = createBrowserRouter([
   {
@@ -42,8 +43,9 @@ const router = createBrowserRouter([
         loader: async ({ params }) => getSingleWinery(params.wineryId)
       },
       {
-        path: '/createWinery',
-        element: <CreateWinery />
+        path: '/wineryIndex/create',
+        element: <WineryCreate />,
+        action: async ({ request }) => createWinery(request)
       },
       {
         path: '/register',

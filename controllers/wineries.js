@@ -16,7 +16,7 @@ export const createWinery = async (req, res) => {
     return res.status(201).json(wineryToCreate)
   } catch (error) {
     console.log(error)
-    return res.status(400).json(error)
+    return res.status(400).json({ message: 'Please log in to add this winery' })
   }
 }
 

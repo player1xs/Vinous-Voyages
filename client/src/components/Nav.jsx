@@ -12,8 +12,6 @@ export default function Nav() {
 
 
   const res = useActionData()
-  console.log(res)
-
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -44,7 +42,7 @@ export default function Nav() {
           <nav onClick={() => setShow(false)}>
             <Link to='/'>Home</Link>&nbsp;
             <Link to='/wineryIndex'>Winery Index</Link>&nbsp;
-            <Link to='/createWinery'>Create Winery</Link>&nbsp;
+            <Link to='/wineryIndex/create'>Create Winery</Link>&nbsp;
             {/* <Link to='/login'>Log-in</Link>&nbsp;
             <Link to='/register'>Register</Link>&nbsp; */}
           </nav>
