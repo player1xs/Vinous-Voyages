@@ -9,6 +9,7 @@ import App from './App'
 import Home from './components/Home'
 import WineryIndex from './components/WineryIndex'
 import WinerySingle from './components/WinerySingle'
+import CreateWinery from './components/CreateWinery'
 import Register from './components/Register'
 import Login from './components/Login'
 import ErrorPage from './components/ErrorPage'
@@ -40,7 +41,12 @@ const router = createBrowserRouter([
         path: '/wineryIndex/:wineryId',
         element: <WinerySingle />,
         loader: async ({ params }) => getSingleWinery(params.wineryId)
-      },      {
+      },
+      {
+        path: '/createWinery',
+        element: <CreateWinery />
+      },
+      {
         path: '/register',
         element: <Register />,
         action: async ({ request }) => registerUser(request)
