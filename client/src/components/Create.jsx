@@ -34,7 +34,8 @@ export default function Create() {
       <ImageUploadField setFormData={setFormData} formData={formData}/>
       <input type="text" name="website" placeholder='Website Url' onChange={handleChange} value={formData.website} />
       <input type="text" name="phone" placeholder='Phone Number - eg: 0044123456789' onChange={handleChange} value={formData.phone} />
-      <input type="text" name="adress" placeholder='Address' onChange={handleChange} value={formData.address} />
+      <input type="text" name="address" placeholder='Address' onChange={handleChange} value={formData.address} />
+      <input type="text" name="geocode" placeholder='Geocode' onChange={handleChange} value={formData.geocode} />
       <input type="text" name="nearbyCity" placeholder='Nearest City/Town' onChange={handleChange} value={formData.nearbyCity} />
       <input type="text" name="attractions" placeholder='Local Attractions (separated by comma)' onChange={handleChange} value={formData.attractions} />
       <input type="text" name="about" placeholder='About...' onChange={handleChange} value={formData.about} />
