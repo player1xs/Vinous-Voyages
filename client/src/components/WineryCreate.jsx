@@ -64,7 +64,7 @@ export default function WineryCreate() {
         {/* Add message on server side to inform  visitor to login if haven't*/}
         {/* {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>} */}
       {/* </form> */}
-
+      <h1 className="text-center bold display-3 mb-4">Create Winery</h1>
       <Form className="form" method="POST">
         <label hidden htmlFor="name">Name</label>
         <input type="text" name="name" placeholder="Name" />
@@ -97,7 +97,9 @@ export default function WineryCreate() {
         <input type="text" name="attractions" placeholder="Local attractions" />
         <label hidden htmlFor="about">About</label>
         <textarea name="about" placeholder="About..." />
-        <button type="submit">Add Winery</button>
+        {/* Add message on server side to inform  visitor to login if haven't or other errors?*/}
+        {/* {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>} */}
+        <button type="submit">Create Winery</button>
       </Form>
 
     </>

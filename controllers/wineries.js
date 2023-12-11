@@ -53,7 +53,7 @@ export const updateWinery = async (req, res) => {
     }
     Object.assign(winery, req.body)
     await winery.save()
-    return res.json(winery)
+    return res.status(202).json(winery)
   } catch (error) {
     console.log(error)
     return res.status(400).json(error)

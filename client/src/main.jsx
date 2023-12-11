@@ -19,7 +19,8 @@ import { getAllWineries, getSingleWinery } from './utils/loaders/winery'
 
 // Actions
 import { registerUser, loginUser } from './utils/actions/auth'
-import { createWinery } from './utils/actions/winery'
+import { createWinery, updateWinery } from './utils/actions/winery'
+import WineryUpdate from './components/WineryUpdate'
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,12 @@ const router = createBrowserRouter([
         path: '/wineryIndex/create',
         element: <WineryCreate />,
         action: async ({ request }) => createWinery(request)
+      },
+      {
+        path: '/wineryIndex/:wineryId/update',
+        element: <WineryUpdate />,
+        action: async ({ request, params }) => updateWinery(request, params.wineryId),
+        loader: async ({ params }) => getSingleWinery(params.wineryId)
       },
       {
         path: '/register',
