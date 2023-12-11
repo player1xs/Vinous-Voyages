@@ -32,7 +32,8 @@ export default function Nav() {
         <Model.Header closeButton>
           <nav onClick={() => setShow(false)}>
             <Link to='/'>Home</Link>&nbsp;
-            <Link to='/wineryIndex'>Winery index</Link>&nbsp;
+            <Link to='/wineryIndex'>Winery Index</Link>&nbsp;
+            <Link to='/createWinery'>Create Winery</Link>&nbsp;
             {/* <Link to='/login'>Log-in</Link>&nbsp;
             <Link to='/register'>Register</Link>&nbsp; */}
           </nav>

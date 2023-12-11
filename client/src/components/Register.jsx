@@ -27,7 +27,7 @@ export default function Register() {
         <button className='btn btn-grey' type='submit'>register</button>
         {/* Below will return a message to user if username taken, etc. Need to set this up. */}
         {res && <p className='danger'>{res.data.message}</p>}
-        </Form>
-      </>
-    )
+      </Form>
+    </>
+  )
 }
