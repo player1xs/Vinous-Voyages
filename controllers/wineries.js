@@ -68,7 +68,7 @@ export const deleteWinery = async (req, res) => {
     if (!winery) {
       return res.status(404).json({ message: 'Vingernon Introuvable OR Unauthorized' })
     }
-    return res.sendStatus(204).json({ message: 'Ou est le Vin - qu\'est-ce que c\'est?!' })
+    return res.sendStatus(204)
   } catch (error) {
     console.log(error)
     return res.status(400).json(error)

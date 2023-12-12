@@ -53,7 +53,7 @@ export default function WineryUpdate() {
         <label hidden htmlFor="about">About</label>
         <textarea name="about" placeholder="About..." defaultValue={winery.about}/>
         {/* Add message on server side to inform  visitor is unauthorised or other errors?*/}
-        {/* {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>} */}
+        {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>}
         <button type="submit">Update Winery</button>
       </Form>
     </>

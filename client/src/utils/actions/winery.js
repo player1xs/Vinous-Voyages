@@ -22,7 +22,7 @@ export async function updateWinery(request, id){
   })
 }
 
-export async function deleteWinery(id){
+export async function deleteWinery(id) {
   await axios.delete(`/api/wineries/${id}`, {
     validateStatus: () => true,
     headers: {

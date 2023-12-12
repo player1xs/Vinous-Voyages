@@ -98,7 +98,7 @@ export default function WineryCreate() {
         <label hidden htmlFor="about">About</label>
         <textarea name="about" placeholder="About..." />
         {/* Add message on server side to inform  visitor to login if haven't or other errors?*/}
-        {/* {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>} */}
+        {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>}
         <button type="submit">Create Winery</button>
       </Form>
 
