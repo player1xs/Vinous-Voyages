@@ -50,9 +50,13 @@ svg {
   width: 100%;
 }
 form.create {
+  position: fixed;
   width: 450px;
-  // position: absolute;
-  // bottom: 20px;
+  position: fixed;
+  bottom: 40;
+  width: 100%;
+  position: absolute;
+  bottom: 400px;
 }
 
 form.log_in {
@@ -98,20 +102,30 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
-.modal-dialog {
-  background-color: transparent;
-}
+
 .container {
   display: flex;
   flex-direction: column;
   width: 300px;
 }
-.container a {
-  text-decoration: none;
-  color: rgb(106, 5, 5);
-  padding: 10px;
-  font-family: Arial, Helvetica, sans-serif;
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.indexs {
+  width: 300px;
+  background-color: rgba(58,49,40,.65);
+  backdrop-filter: blur(1px);
+}
+
+.btn-primary {
+  background: transparent;
+  border: none;
+
+}
+.btn-primary:hover {
+  background-color: transparent;
 }

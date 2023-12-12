@@ -1,4 +1,8 @@
 footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -7,4 +11,16 @@ footer {
   color: rgb(159, 159, 159);
   text-align: center;
   margin-bottom: 0 !important;
+}
+path {
+  color: white;
+}
+.second-h1 {
+  color: white;
+  font-size: 25px;
+  font-family: 'Dancing Script', cursive;
+}
+.social-icons {
+  width: 30px; 
+  height: 30px;
 }
