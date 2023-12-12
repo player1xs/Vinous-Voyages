@@ -54,7 +54,10 @@ export default function WineryUpdate() {
         <textarea name="about" placeholder="About..." defaultValue={winery.about}/>
         {/* Add message on server side to inform  visitor is unauthorised or other errors?*/}
         {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>}
-        <button type="submit">Update Winery</button>
+        <button type="submit" name="intent" value="update">Update Winery</button>
+      </Form>
+      <Form className="form" method="DELETE">
+        <button type="submit" name="intent" value="delete">Delete Winery</button>
       </Form>
     </>
   )

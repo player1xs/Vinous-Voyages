@@ -5,15 +5,12 @@ import { activeUser } from '../utils/helpers/common'
 export default function WinerySingle() {
 
   const winery = useLoaderData()
-  const { _id, name, about, region, appelation, varietalsGrown, image, owner } = winery
+  const { _id, name, about, region, appelation, varietalsGrown, image, owner, reviews } = winery
   return (
     <>
       {activeUser() === winery.owner._id &&
         <div>
-          <Link to={`/wineryIndex/${_id}/update`}>🖊</Link>
-          <Form method='DELETE'>
-            <button>🗑</button>
-          </Form>
+          <button className="update-delete"><Link to={`/wineryIndex/${_id}/update`}>Update / Delete</Link></button>
         </div>
       }
       <div className="sglHeader">
@@ -34,6 +31,24 @@ export default function WinerySingle() {
           <p>Added by: {owner.username}</p>
         </div>
       </div>
+      <Form className="review-form" method="POST">
+        Leave a review<br></br>
+        <label htmlFor="rating">Score out of 100:</label>
+        <input type="text" name="rating" />
+        <label hidden htmlFor="text">Review Description</label>
+        <textarea name="text" placeholder="Review description..." />
+        <button type="submit">Post Review</button>
+      </Form>
+      {reviews.map(review => {
+        const { _id, rating, text, owner } = review
+        return (
+          <div key={_id} className="review">
+            <p>{rating}</p>
+            <p>{text}</p>
+            <p>{owner}</p>
+          </div>
+        )
+      })}
     </>
   )
 }

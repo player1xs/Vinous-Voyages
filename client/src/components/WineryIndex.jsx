@@ -8,7 +8,7 @@ import Container from 'react-bootstrap/Container'
 export default function WineryIndex() {
 
   const allWineries = useLoaderData()
-  console.log(allWineries)
+  // console.log(allWineries)
 
   //const [wineries, setWineries] = useState(allWineries)
   const [idList, setIdList] = useState([])

@@ -4,14 +4,11 @@ import { Link, useActionData, useNavigate } from 'react-router-dom'
 import Model from 'react-bootstrap/Modal'
 import Modal from 'react-bootstrap/Modal'
 
-
 import Button from 'react-bootstrap/Button'
 import userIcon from '../images/image.png'
 import { Form } from 'react-router-dom'
 
-
 export default function Nav() {
-
 
   const toggleModal = () => {
     // Toggle the state to show/hide the register modal
