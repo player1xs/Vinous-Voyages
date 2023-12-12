@@ -16,7 +16,7 @@ export const createWinery = async (req, res) => {
     return res.status(201).json(wineryToCreate)
   } catch (error) {
     console.log(error)
-    return res.status(400).json(error)
+    return res.status(400).json({ message: 'Please log in to add this winery' })
   }
 }
 
@@ -53,7 +53,7 @@ export const updateWinery = async (req, res) => {
     }
     Object.assign(winery, req.body)
     await winery.save()
-    return res.json(winery)
+    return res.status(202).json(winery)
   } catch (error) {
     console.log(error)
     return res.status(400).json(error)
@@ -68,7 +68,7 @@ export const deleteWinery = async (req, res) => {
     if (!winery) {
       return res.status(404).json({ message: 'Vingernon Introuvable OR Unauthorized' })
     }
-    return res.sendStatus(204).json({ message: 'Ou est le Vin - qu\'est-ce que c\'est?!' })
+    return res.sendStatus(204)
   } catch (error) {
     console.log(error)
     return res.status(400).json(error)

@@ -9,7 +9,7 @@ import App from './App'
 import Home from './components/Home'
 import WineryIndex from './components/WineryIndex'
 import WinerySingle from './components/WinerySingle'
-import CreateWinery from './components/CreateWinery'
+import WineryCreate from './components/WineryCreate'
 import Register from './components/Register'
 import Login from './components/Login'
 import ErrorPage from './components/ErrorPage'
@@ -19,6 +19,8 @@ import { getAllWineries, getSingleWinery } from './utils/loaders/winery'
 
 // Actions
 import { registerUser, loginUser } from './utils/actions/auth'
+import { createWinery, updateWinery, deleteWinery } from './utils/actions/winery'
+import WineryUpdate from './components/WineryUpdate'
 
 const router = createBrowserRouter([
   {
@@ -39,11 +41,19 @@ const router = createBrowserRouter([
       {
         path: '/wineryIndex/:wineryId',
         element: <WinerySingle />,
-        loader: async ({ params }) => getSingleWinery(params.wineryId)
+        loader: async ({ params }) => getSingleWinery(params.wineryId),
+        action: async ({ params }) => deleteWinery(params.wineryId)
       },
       {
-        path: '/createWinery',
-        element: <CreateWinery />
+        path: '/wineryIndex/create',
+        element: <WineryCreate />,
+        action: async ({ request }) => createWinery(request)
+      },
+      {
+        path: '/wineryIndex/:wineryId/update',
+        element: <WineryUpdate />,
+        action: async ({ request, params }) => updateWinery(request, params.wineryId),
+        loader: async ({ params }) => getSingleWinery(params.wineryId)
       },
       {
         path: '/register',
