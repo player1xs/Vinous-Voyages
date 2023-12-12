@@ -14,11 +14,11 @@ function App() {
       <main>
         {
           navigation.state === 'idle' ?
-        <Outlet />
-        :
-        <div className='centred'>
-          <Spinner animation='border' />
-        </div>
+            <Outlet />
+            :
+            <div className='centred'>
+              <Spinner animation='border' />
+            </div>
         }
       </main>
       <Footer />
