@@ -24,6 +24,7 @@
   font-size: 40px;
   font-family: 'Metal', sans-serif;
   margin-bottom: -10px;
+  color: black;
 }
 
 
@@ -40,6 +41,7 @@
 .WineryInfo {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 .img-container img{
   height: 350px;
@@ -126,8 +128,8 @@ ul.varietals {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: left;
-  margin-bottom: 100px;
+  justify-content: space-evenly;
+  margin-bottom: 25px;
   margin-top: 25px;
 }
 
@@ -143,4 +145,27 @@ ul.varietals {
 
 .direct-link {
   text-decoration: underline;
+}
+
+.rating-box {
+  width: 150px;
+}
+
+.review-form {
+  background-color: rgba(106, 5, 5, 0.75);
+  color: white;
+  box-shadow: 7px 6px 2px rgba(0, 0, 0, 0.661);
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.review-title {
+  font-size: 30px;
+  font-family: 'Metal', sans-serif;
+}
+
+.review-text-box {
+  width: 75vw;
+  height: 15vh;
 }

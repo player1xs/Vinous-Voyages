@@ -133,7 +133,6 @@ form.log_in {
 }
 h1 {
   color: white;
-  padding: 8px;
 }
 input {
   background-color: #fff;
@@ -163,6 +162,7 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0px;
 }
 nav {
   display: flex;
@@ -193,4 +193,13 @@ nav {
   display: flex;
   flex-direction: column;
   background-color: transparent;
+}
+
+.header-menues {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-title {
+  padding-left: 15px
 }

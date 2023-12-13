@@ -1,0 +1,82 @@
+.create-container {
+  width: 60vw;
+  height: 70vh;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+ }
+
+.create-name {
+  width: 25vw;
+}
+
+.winery-create {
+  font-size: 50px;
+  font-family: 'Metal', sans-serif;
+  color: black;
+}
+
+.create-location {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.create-product {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.create-contact {
+  display: flex;
+  margin-bottom: 20px
+}
+
+.create-geolocation {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.create-city {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.text-for-about {
+  width: 30vw;
+  height: 12vh;
+}
+
+.create-about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-div {
+  justify-content: center;
+  align-items: center;
+}
+
+.createBtn {
+  margin: 0 auto;
+  margin-bottom:100px;
+}
+
+.create-Btn-container {
+  display: flex;
+  flex-direction: column;
+}
+
+p.danger {
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  color: rgb(94, 0, 0);
+  font-weight: bolder;
+}
+

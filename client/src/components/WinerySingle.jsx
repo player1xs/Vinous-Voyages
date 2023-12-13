@@ -10,7 +10,7 @@ import 'leaflet/dist/leaflet.css'
 export default function WinerySingle() {
 
 const winery = useLoaderData()
-const { name, about, region, appelation, varietalsGrown, image, range, website, phone, nearbyCity, attractions, address, geocode, owner, _id} = winery
+const { name, about, region, appelation, varietalsGrown, image, range, website, phone, nearbyCity, attractions, address, latitude, longitude, _id, reviews} = winery
 
 const customIcon = new Icon({
   iconUrl: "https://icons.veryicon.com/png/o/clothes-accessories/platinum-knight-travel-shot-monochrome-icon/wine-glass-46.png",
@@ -47,30 +47,8 @@ const customIcon = new Icon({
                 return <li key={idx}>{item}, </li>
               })}
             </ul>
-            <p>Added by: {owner.username}</p>
           </div>
-        {/* <h1>{name}</h1>
-        <Link to={`/wineryIndex`} className="backBtn">Back</Link> */}
-      </div>
-      <Form className="review-form" method="POST">
-        Leave a review<br></br>
-        <label htmlFor="rating">Score out of 100:</label>
-        <input type="text" name="rating" />
-        <label hidden htmlFor="text">Review Description</label>
-        <textarea name="text" placeholder="Review description..." />
-        <button type="submit" name="intent" value="create">Post Review</button>
-      </Form>
-      {reviews.map(review => {
-        const { _id, rating, text, owner } = review
-        return (
-          <div key={_id} className="review">
-            <p>{rating}</p>
-            <p>{text}</p>
-            <p>{owner.username}</p>
-            {activeUser() === owner._id && <button className="delete" name="intent" value="delete">Delete</button>}
-          </div>
-        )
-      })}
+        </div>
 
         <div className="about-section">
           <p className="about"><span className="about-header">About: {name} </span><br />{ about }</p>
@@ -85,17 +63,39 @@ const customIcon = new Icon({
             <p><span className="text-header">Local Attractions: </span>{attractions} </p>
           </div>
           <div className="single-map">
-            <MapContainer center={geocode} zoom={16}>
+            <MapContainer center={[latitude, longitude]} zoom={16}>
           
               <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
               />
-              <Marker position={geocode} icon={customIcon}></Marker>
+              <Marker position={[latitude, longitude]} icon={customIcon}></Marker>
             </MapContainer>
           </div>
-
         </div>
+          <div className="review-container">
+            <Form className="review-form" method="POST">
+              <div className="review-title">
+                Leave a review<br></br>
+              </div>
+            <label htmlFor="rating">Score:</label>
+            <input type="text" name="rating" className="rating-box" placeholder="1-100"/>
+            <label hidden htmlFor="text">Review Description</label>
+            <textarea className="review-text-box"name="text" placeholder="Review description..." />
+            <button type="submit" name="intent" value="create">Post Review</button>
+            </Form>
+            {reviews.map(review => {
+              const { _id, rating, text, owner } = review
+              return (
+                <div key={_id} className="review">
+                  <p>{rating}</p>
+                  <p>{text}</p>
+                  <p>{owner.username}</p>
+                  {activeUser() === owner._id && <button className="delete" name="intent" value="delete">Delete</button>}
+                </div>
+              )
+            })}
+          </div>
       </Container>
     </>
   )

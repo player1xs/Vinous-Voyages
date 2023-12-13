@@ -182,7 +182,7 @@ export default [
     website: 'https://royal-tokaji.com',
     address: '3909 Mád, Rákóczi utca 35.',
     latitude: 48.19354443809151, 
-    longitude: -21.27794402845656,
+    longitude: 21.27794402845656,
     nearbyCity: 'Miskolc',
     attractions: [''],
   },

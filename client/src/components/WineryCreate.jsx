@@ -2,6 +2,7 @@ import { useMemo, useEffect } from 'react'
 import { useActionData, useNavigate, Form } from 'react-router-dom'
 // import ImageUploadField from './ImageUploadField.jsx'
 import countryList from 'react-select-country-list'
+import Container from 'react-bootstrap/esm/Container'
 
 export default function WineryCreate() {
 
@@ -64,46 +65,68 @@ export default function WineryCreate() {
         {/* Add message on server side to inform  visitor to login if haven't*/}
         {/* {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>} */}
       {/* </form> */}
-      <h1 className="text-center bold display-3 mb-4">Create Winery</h1>
-      <Form className="form" method="POST">
-        <label hidden htmlFor="name">Name</label>
-        <input type="text" name="name" placeholder="Name" />
-        <input list="countries" name="country" placeholder="Country"/>
-        <datalist id="countries">
-          {options.map(country => {
-            return <option key={country.label} value={country.label}></option>
-          })}
-        </datalist>
-        <label hidden htmlFor="region">Region</label>
-        <input type="text" name="region" placeholder="Region" />
-        <label hidden htmlFor="appelation">Appelation</label>
-        <input type="text" name="appelation" placeholder="Appelation" />
-        <label hidden htmlFor="varietalsGrown">Varietals grown</label>
-        <input type="text" name="varietalsGrown" placeholder="Varietals grown (separate by comma)" />
-        <label hidden htmlFor="range">Range</label>
-        <input type="text" name="range" placeholder="Product range (separate by comma)" />
-        {/* <ImageUploadField/> */}
-        <label hidden htmlFor="website">Website</label>
-        <input type="text" name="website" placeholder="Website URL" />
-        <label hidden htmlFor="phone">Phone number</label>
-        <input type="text" name="phone" placeholder="Phone number" />
-        <label hidden htmlFor="address">Address</label>
-        <input type="text" name="address" placeholder="Address" />
-        <label hidden htmlFor="latitude">Geocode latitude</label>
-        <input type="number" step="any" name="latitude" placeholder="Geocode latitude" />
-        <label hidden htmlFor="longitude">Geocode longitude</label>
-        <input type="number" step="any" name="longitude" placeholder="Geocode longitude" />
-        <label hidden htmlFor="nearbyCity">Nearby City</label>
-        <input type="text" name="nearbyCity" placeholder="Nearest city/town" />
-        <label hidden htmlFor="attractions">Local Attractions</label>
-        <input type="text" name="attractions" placeholder="Local attractions" />
-        <label hidden htmlFor="about">About</label>
-        <textarea name="about" placeholder="About..." />
-        {/* Add message on server side to inform  visitor to login if haven't or other errors?*/}
-        {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>}
-        <button type="submit">Create Winery</button>
-      </Form>
-
+      <h1 className="winery-create text-center bold display-3 mb-4">Winery Info Form</h1>
+      <Container fluid className="create-container overflow-auto">
+        <Form className="form" method="POST">
+          <div className="create-name">
+            <label hidden htmlFor="name">Name</label>
+            <input type="text" name="name" placeholder="Winery Name" />
+          </div>
+          <div className="create-location">
+            <input list="countries" name="country" placeholder="Country"/>
+            <datalist id="countries">
+              {options.map(country => {
+                return <option key={country.label} value={country.label}></option>
+              })}
+            </datalist>
+            <label hidden htmlFor="region">Region</label>
+            <input type="text" name="region" placeholder="Region" />
+            <label hidden htmlFor="appelation">Appelation</label>
+            <input type="text" name="appelation" placeholder="Appelation" />
+          </div>
+          <div className="create-product">
+            <label hidden htmlFor="varietalsGrown">Varietals grown</label>
+            <input type="text" name="varietalsGrown" placeholder="Varietals grown (separate by comma)" />
+            <label hidden htmlFor="range">Range</label>
+            <input type="text" name="range" placeholder="Product range (separate by comma)" />
+          </div>
+          <div className="create-image">
+            {/* <ImageUploadField/> */}
+          </div>
+          <div className="create-contact">
+            <label hidden htmlFor="website">Website</label>
+            <input type="text" name="website" placeholder="Website URL" />
+            <label hidden htmlFor="phone">Phone number</label>
+            <input type="text" name="phone" placeholder="Phone number" />
+            <label hidden htmlFor="address">Address</label>
+            <input type="text" name="address" placeholder="Address" />
+          </div>
+          <div className="create-geolocation">
+            <label hidden htmlFor="latitude">Geocode latitude</label>
+            <input type="number" step="any" name="latitude" placeholder="Geocode latitude" />
+            <label hidden htmlFor="longitude">Geocode longitude</label>
+            <input type="number" step="any" name="longitude" placeholder="Geocode longitude" />
+          </div>
+          <div className="create-about">
+            <div className="create-city">
+              <label hidden htmlFor="nearbyCity">Nearby City</label>
+              <input type="text" name="nearbyCity" placeholder="Nearest City/Airport" />
+              <label hidden htmlFor="attractions">Local Attractions</label>
+              <input type="text" name="attractions" placeholder="Local attractions" />
+            </div>
+            <div className="about-div">
+              <label hidden htmlFor="about">About</label>
+              <textarea className="text-for-about" name="about" placeholder="About..." />
+            </div>
+          </div>
+          <div className="create-Btn-container">
+        
+          {/* Add message on server side to inform  visitor to login if haven't or other errors?*/}
+          {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>}
+            <button className="createBtn" type="submit">Complete Form</button>
+          </div>
+        </Form>
+      </Container>
     </>
   )
 }
