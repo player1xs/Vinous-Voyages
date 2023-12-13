@@ -52,8 +52,8 @@ const customIcon = new Icon({
             </ul>
             <p>Added by: {owner.username}</p>
           </div>
-        <h1>{name}</h1>
-        <Link to={`/wineryIndex`} className="backBtn">Back</Link>
+        {/* <h1>{name}</h1>
+        <Link to={`/wineryIndex`} className="backBtn">Back</Link> */}
       </div>
 
         <div className="about-section">
