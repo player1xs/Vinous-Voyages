@@ -1,6 +1,8 @@
 h2 {
-  font-size: 30px;
-  font-family: 'Cinzel', serif;
+  font-size: 48px;
+  font-family: 'Metal', cursive;
+  width: 100vw;
+  text-align: center;
 }
 
 main {
@@ -16,23 +18,25 @@ main {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
-  width: 100vh; //adjust by fraction with filterbar!
+  // margin-top: 10px;
+  // width: 100vh; //adjust by fraction with filterbar!
   background-color: rgba(255,255,255,0.4);
   padding: 25px 20px;
   border-radius: 1%;
   height: 80vh;
   scrollbar-width: none;
   overflow-y: scroll;
+  min-width: 1000px;
+  text-decoration: none;
 }
 
 ::-webkit-scrollbar {
   display: none;
- }
+}
 
 .single {
-  width: 100px;
-  height: 175px;
+  width: 180px;
+  height: 180px;
   margin: 10px;
   background-size: cover;
   background-position: center;
@@ -40,15 +44,88 @@ main {
   padding: 90px;
   display: flex;
   flex-direction: column;
-  justify-content:start;
-  align-items:center;
+  justify-content:end;
+  align-items: center;
   box-shadow: 0px 20px 30px -10px rgba(0, 0, 0, 0.9);
   text-decoration: none;
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 3%;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.single:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .index-body {
+    width: 90vw;
+  min-width: 800px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.filter-bar {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content:start;
+  align-items: center;
+  height: 175px;
+  width: 25vw;
+  background-color: rgba(255,255,255,0.4);
+  margin-right: 5px;
+  border-radius: 4%;
+}
+
+.dropdown-filter {
+  margin-bottom: 15px;
+}
+
+.search-filter {
+  margin-bottom: 15px;
+}
+
+.randomBtn {
+  font-family: 'Metal', cursive;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  background-color: rgba(90, 1, 1, 0.84);
+  border: white double;
+  box-shadow: 7px 6px 10px rgba(0, 0, 0, 0.9);
+  text-decoration: underline;
+  padding: 0 10px;
 }
 
 .name {
-  text-decoration: none;
-  color: white
+  color: white;
+  background-color: linear-gradient(bottom, rgba(0,0,0,0.8), rgba(164, 5, 5, 0));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.8), rgba(164,5,5,0));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,8), rgba(164,5,5,0));
+  font-family: 'Dancing Script', cursive;
+  font-size: 20px;
+  height: 50px;
+  width: 180px;
+  display: flex;
+  flex-direction: row;
+  // flex-wrap: wrap;
+  justify-content:start;
+  align-items:end;
+  position: relative;
+  border-radius: 2%;
+  transition: all .7s ease-in-out;
+  padding-top: 100px;
 }
+
+.single-info {
+  height: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+//worl on input and select bars

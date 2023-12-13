@@ -1,12 +1,13 @@
 /* eslint-disable react/jsx-key */
-import { Icon, divIcon, point } from 'leaflet'
+import { Icon } from 'leaflet'
+// import { divIcon, point } from 'leaflet'
 import '../styles/components/Mapbox.scss'
 import 'leaflet/dist/leaflet.css'
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { useLoaderData } from 'react-router'
 import { Link } from 'react-router-dom'
-import MarkerClusterGroup from 'react-leaflet-cluster'
+// import MarkerClusterGroup from 'react-leaflet-cluster'
 
 
 

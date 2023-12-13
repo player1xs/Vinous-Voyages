@@ -1,10 +1,22 @@
 
 
 h1 a{
-  font-size: 40px;
+  font-size: 80px;
   font-family: 'Dancing Script', cursive;
   text-decoration: none;
-  color: rgb(106, 5, 5)
+  color: rgb(106, 5, 5);
+  text-shadow: 0 1px 0 #b6b6b6, 
+               0 2px 0 #606060,
+               0 3px 0 #5b5b5b,
+               0 4px 0 #4d4d4d,
+               0 5px 0 #000000,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
 }
 
 header {
@@ -50,17 +62,58 @@ svg {
   width: 100%;
 }
 form.create {
+  position: fixed;
   width: 450px;
-  // position: absolute;
-  // bottom: 20px;
+  position: fixed;
+  bottom: 40;
+  width: 100%;
+  position: absolute;
+  bottom: 4px;
+}
+.modal-body {
+  height: 50vh;
+}
+.modal-header{
+  border: none;
+}
+.modal-content {
+  background-color: transparent;
+  border: none;
+}
+li.nav-item {
+  background-color: rgba(58,49,40,.65);
+}
+.nav-item {
+  background-color: transparent;
+}
+.sign.in {
+  color: white;
+}
+button.btn-close {
+  background-color: white;
+  width: 100px;
+  height: 0px;
+}
+.modal-header {
+  width: 20px;
 }
 
+a.nav-link {
+  color: white;
+  margin-left: 80px;
+}
+li.nav-item {
+  background: none;
+}
+a.nav-link:hover {
+  color: rgb(106, 5, 5);
+}
 form.log_in {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 30vh; 
+  height: 40vh; 
   box-sizing: border-box;
   background: rgba(58,49,40,.65);
   border-radius: 12px;
@@ -98,20 +151,46 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
-.modal-dialog {
-  background-color: transparent;
-}
+
 .container {
   display: flex;
   flex-direction: column;
   width: 300px;
 }
-.container a {
-  text-decoration: none;
-  color: rgb(106, 5, 5);
-  padding: 10px;
-  font-family: Arial, Helvetica, sans-serif;
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+}
+:root.fade.modal-backdrop.show {
+  background-color: transparent;
+}
+.indexs {
+  width: 300px;
+  background-color: rgba(58,49,40,.65);
+  backdrop-filter: blur(1px);
+  background-color: transparent;
+}
+
+.btn-primary {
+  background: transparent;
+  border: none;
+}
+.btn.btn-danger {
+  margin-bottom: 10px;
+}
+.btn-primary:hover {
+  background-color: transparent;
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
 }
