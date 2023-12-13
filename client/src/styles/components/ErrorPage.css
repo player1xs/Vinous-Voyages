@@ -1,0 +1,21 @@
+#error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.error-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+}
+
+.error-gif {
+  margin-bottom: 15px;
+  height: 500px;
+  border-radius: 13%;
+}/*# sourceMappingURL=ErrorPage.css.map */

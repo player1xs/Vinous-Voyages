@@ -1,1 +1,27 @@
-/*# sourceMappingURL=Mapbox.css.map */
+.leaflet-container {
+  height: 400px;
+  width: 600px;
+  align-self: center;
+}
+
+.popUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cluster-icon {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: aliceblue;
+}
+
+.mapbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}/*# sourceMappingURL=Mapbox.css.map */

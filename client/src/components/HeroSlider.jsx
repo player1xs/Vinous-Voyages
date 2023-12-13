@@ -23,8 +23,6 @@ export default function HeroSlider() {
         {images.map((URL, index) => (
           <div className="slide" key={index} >
             <img alt="sample" src={URL} />
-            <p className='text-about'>SOME BUTTON</p>
-            
           </div>
         ))}
       </Carousel>

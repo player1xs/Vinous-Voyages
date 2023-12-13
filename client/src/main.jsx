@@ -13,6 +13,7 @@ import WineryCreate from './components/WineryCreate'
 import Register from './components/Register'
 import Login from './components/Login'
 import ErrorPage from './components/ErrorPage'
+import Rick from './components/Rick'
 
 // Loaders
 import { getAllWineries, getSingleWinery } from './utils/loaders/winery'
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
         path: '/login',
         element: <Login />,
         action: async ({ request }) => loginUser(request)
+      },
+      {
+        path: '/rick',
+        element: <Rick />
       }
     ]
   }

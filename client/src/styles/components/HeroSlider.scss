@@ -35,7 +35,6 @@
   right: 0;
 }
 
-
 .carousel .control-dots {
   z-index: 3;
 }
@@ -75,7 +74,7 @@
   font-weight: 700;
 }
 
-ul {
+.carousel.ul {
   display: none;
 }
 
@@ -85,6 +84,8 @@ ul {
 
 .carousel.carousel-slider {
   width: 100% !important;
+  height: 300px;
+  border-radius: 1%;
 }
 
 .text-about {
