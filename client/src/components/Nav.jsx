@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Link, useActionData, useNavigate } from 'react-router-dom'
-
 // import Model from 'react-bootstrap/Modal'
 import Modal from 'react-bootstrap/Modal'
 
@@ -8,6 +7,7 @@ import Button from 'react-bootstrap/Button'
 import userIcon from '../images/image.png'
 import { Form } from 'react-router-dom'
 
+import { setToken } from '../utils/helpers/common'
 
 export default function Nav() {
 
@@ -23,6 +23,7 @@ export default function Nav() {
 
   useEffect(() => {
     if (res?.status === 201) {
+      setToken(res.data.token)
       navigate('/login')
     }
   }, [res, navigate])
@@ -45,7 +46,7 @@ export default function Nav() {
         <Modal.Header closeButton>
         </Modal.Header>
         <nav onClick={() => setShow(false)}>
-          <ul className='nav nav-underline navbar-light bg-light'>
+          <ul className=' burger-menu nav nav-underline navbar-link-danger bg-link-danger'>
             <li className='nav-item'>
               <Link to='/' className='nav-link' >Home</Link>&nbsp;
             </li>
@@ -64,7 +65,7 @@ export default function Nav() {
         <img className='logo rounded-circle d-inline-block align-center' src={userIcon} height='50' alt='user icon' />
       </Button>
 
-      <Modal show={modalShow} fullscreen={true} onHide={() => setModalShow(false)} className='centered-modal'>
+      <Modal show={modalShow} halfscreen={true} onHide={() => setModalShow(false)} className='centered-modal'>
         <Modal.Header closeButton>
         </Modal.Header>
         <Modal.Body>
@@ -74,11 +75,11 @@ export default function Nav() {
             <input type='email' name='email' placeholder='Email...' />
             <input type='password' name='password' placeholder='Password...' />
             <input type='password' name='passwordConfirmation' placeholder='confirm password...' />
-            <button className='register' type='submit'>register</button>
+            <button className=' btn btn-danger' type='submit'>register</button>
             {/* Below will return a message to user if username taken, etc. Need to set this up. */}
             {res && <p className='danger'>{res.data.message}</p>}
             <div className='sign in'>
-              Already have an account ?
+              Already have an account ?  &nbsp;
               <button type="button" className="btn btn-danger" onClick={() => {
                 setModalShow(false) // Close signup modal if open
                 setLoginModalShow(true) // Open login modal
@@ -98,7 +99,7 @@ export default function Nav() {
             <h1 className='text-center bold display-3 mb-4'>Login</h1>
             <input type='email' name='email' placeholder='Email...' />
             <input type='password' name='password' placeholder='Password...' />
-            <button className='btn btn-grey' type='submit'>Login</button>
+            <button className='btn btn-danger' type='submit'> Login </button>
             <button type="button" className="btn btn-danger" onClick={() => {
               setModalShow(true)
               setLoginModalShow(false)

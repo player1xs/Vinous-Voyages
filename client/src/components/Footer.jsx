@@ -9,14 +9,14 @@ import { FaXTwitter } from "react-icons/fa6"
 export default function Footer(){
   return (
     <footer>
-      <h1 className='second-h1'>Vinous Voyages</h1>
+      <h1 className='footer-h1'>Vinous Voyages</h1>
       &copy; Made by James, Benedict and Nasiim {new Date().getFullYear()}
       <div className='socials'>
-      <a href='#' className='social-icons'><FaInstagram /></a>
+      <a href='#' className='footer-icon'><FaInstagram /></a>
       {/* <a href='#' className='social-icons'><TiSocialFacebookCircular /></a> */}
       <TiSocialFacebook />
-      <a href='#' className='social-icons'><FaSnapchat /></a>
-      <a href='#' className='social-icons'><FaXTwitter /></a>
+      <a href='#' className='footer-icon'><FaSnapchat /></a>
+      <a href='#' className='footer-icon'><FaXTwitter /></a>
       </div>
     </footer>
   )

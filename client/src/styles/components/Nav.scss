@@ -68,15 +68,52 @@ form.create {
   bottom: 40;
   width: 100%;
   position: absolute;
-  bottom: 400px;
+  bottom: 4px;
+}
+.modal-body {
+  height: 50vh;
+}
+.modal-header{
+  border: none;
+}
+.modal-content {
+  background-color: transparent;
+  border: none;
+}
+li.nav-item {
+  background-color: rgba(58,49,40,.65);
+}
+.nav-item {
+  background-color: transparent;
+}
+.sign.in {
+  color: white;
+}
+button.btn-close {
+  background-color: white;
+  width: 100px;
+  height: 0px;
+}
+.modal-header {
+  width: 20px;
 }
 
+a.nav-link {
+  color: white;
+  margin-left: 80px;
+}
+li.nav-item {
+  background: none;
+}
+a.nav-link:hover {
+  color: rgb(106, 5, 5);
+}
 form.log_in {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 30vh; 
+  height: 40vh; 
   box-sizing: border-box;
   background: rgba(58,49,40,.65);
   border-radius: 12px;
@@ -127,17 +164,33 @@ input {
   justify-content: space-between;
   align-items: center;
 }
+nav {
+  display: flex;
+  flex-direction: column;
+}
+:root.fade.modal-backdrop.show {
+  background-color: transparent;
+}
 .indexs {
   width: 300px;
   background-color: rgba(58,49,40,.65);
   backdrop-filter: blur(1px);
+  background-color: transparent;
 }
 
 .btn-primary {
   background: transparent;
   border: none;
-
+}
+.btn.btn-danger {
+  margin-bottom: 10px;
 }
 .btn-primary:hover {
+  background-color: transparent;
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
   background-color: transparent;
 }
