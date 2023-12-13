@@ -1,5 +1,6 @@
-import { useLoaderData, Link } from "react-router-dom"
+import { useLoaderData, Link, Form } from "react-router-dom"
 import Container from 'react-bootstrap/Container'
+import { activeUser } from '../utils/helpers/common'
 
 import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import { Icon } from 'leaflet'
@@ -9,7 +10,7 @@ import 'leaflet/dist/leaflet.css'
 export default function WinerySingle() {
 
 const winery = useLoaderData()
-const { name, about, region, appelation, varietalsGrown, image, range, website, phone, nearbyCity, attractions, address, geocode} = winery
+const { name, about, region, appelation, varietalsGrown, image, range, website, phone, nearbyCity, attractions, address, geocode, owner, _id} = winery
 
 const customIcon = new Icon({
   iconUrl: "https://icons.veryicon.com/png/o/clothes-accessories/platinum-knight-travel-shot-monochrome-icon/wine-glass-46.png",
@@ -18,6 +19,14 @@ const customIcon = new Icon({
 
   return (
     <>
+      {activeUser() === winery.owner._id &&
+        <div>
+          <Link to={`/wineryIndex/${_id}/update`}>🖊</Link>
+          <Form method='DELETE'>
+            <button>🗑</button>
+          </Form>
+        </div>
+      }
       <div className="sglHeader">
         <Link to={`/wineryIndex`} className="backBtn">Back</Link>
       </div>
@@ -35,14 +44,17 @@ const customIcon = new Icon({
               {range.map((item, idx) => {
                 return <li key={idx}>{item}</li>
                 })}
+            </ul>
             <ul className="varietals"> <span className="text-header">Varietals planted: <br /></span>
               {varietalsGrown.map((item, idx) => {
                 return <li key={idx}>{item}, </li>
               })}
             </ul>
-            </ul>
+            <p>Added by: {owner.username}</p>
           </div>
-        </div>
+        <h1>{name}</h1>
+        <Link to={`/wineryIndex`} className="backBtn">Back</Link>
+      </div>
 
         <div className="about-section">
           <p className="about"><span className="about-header">About: {name} </span><br />{ about }</p>

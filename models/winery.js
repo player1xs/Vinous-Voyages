@@ -21,7 +21,7 @@ const winerySchema = new mongoose.Schema({
   range: [String],
   image: String,
   about: { type: String, required: true },
-  phone: Number,
+  phone: String,
   website: String,
   address: String,
   geocode: { type: [Number], required: true },
