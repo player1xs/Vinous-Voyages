@@ -37,7 +37,7 @@ export default function WinerySingle() {
         <input type="text" name="rating" />
         <label hidden htmlFor="text">Review Description</label>
         <textarea name="text" placeholder="Review description..." />
-        <button type="submit">Post Review</button>
+        <button type="submit" name="intent" value="create">Post Review</button>
       </Form>
       {reviews.map(review => {
         const { _id, rating, text, owner } = review
@@ -45,7 +45,8 @@ export default function WinerySingle() {
           <div key={_id} className="review">
             <p>{rating}</p>
             <p>{text}</p>
-            <p>{owner}</p>
+            <p>{owner.username}</p>
+            {activeUser() === owner._id && <button className="delete" name="intent" value="delete">Delete</button>}
           </div>
         )
       })}

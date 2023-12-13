@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         path: '/wineryIndex/:wineryId',
         element: <WinerySingle />,
         loader: async ({ params }) => getSingleWinery(params.wineryId),
-        action: async ({ params }) => createOrDeleteReview(params.userId)
+        action: async ({ request, params }) => createOrDeleteReview(request, params.wineryId, params.reviewId)
       },
       {
         path: '/wineryIndex/create',

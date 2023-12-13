@@ -40,7 +40,7 @@ export default function Mapbox() {
       {/* > */}
 
       {markers.map(marker => (
-        <Marker position={marker.geocode} key={marker._id} icon={customIcon}>
+        <Marker position={[marker.latitude, marker.longitude]} key={marker._id} icon={customIcon}>
           <Popup>
             <div className="popUp">
               <img className="popUp-img" src={marker.image} height="75px"/>

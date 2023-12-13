@@ -89,8 +89,10 @@ export default function WineryCreate() {
         <input type="text" name="phone" placeholder="Phone number" />
         <label hidden htmlFor="address">Address</label>
         <input type="text" name="address" placeholder="Address" />
-        <label hidden htmlFor="geocode">Geocode</label>
-        <input type="text" name="geocode" placeholder="Geocode" />
+        <label hidden htmlFor="latitude">Geocode latitude</label>
+        <input type="number" step="any" name="latitude" placeholder="Geocode latitude" />
+        <label hidden htmlFor="longitude">Geocode longitude</label>
+        <input type="number" step="any" name="longitude" placeholder="Geocode longitude" />
         <label hidden htmlFor="nearbyCity">Nearby City</label>
         <input type="text" name="nearbyCity" placeholder="Nearest city/town" />
         <label hidden htmlFor="attractions">Local Attractions</label>

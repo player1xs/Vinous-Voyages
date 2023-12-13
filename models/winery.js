@@ -24,13 +24,13 @@ const winerySchema = new mongoose.Schema({
   phone: String,
   website: String,
   address: String,
-  geocode: [Number],
+  latitude: Number,
+  longitude: Number,
   nearbyCity: String,
   attractions: [String],
   owner: { type: mongoose.ObjectId, ref: 'User', required: true },
   reviews: [reviewSchema],
 })
-
 
 winerySchema
   .virtual('avgRating')
