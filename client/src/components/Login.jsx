@@ -1,17 +1,18 @@
 import { useEffect } from 'react'
 import { Form, useActionData, useNavigate } from 'react-router-dom'
+import { setToken } from '../utils/helpers/common'
 
 export default function Login() {
 
   const res = useActionData()
   console.log(res)
-
   const navigate = useNavigate()
 
   useEffect(() => {
     // If login is successful, navigate to home page
     // Use optional chaining to check if res is defined and not throw error if not
     if (res?.status === 202) {
+      setToken(res.data.token)
       navigate('/')
     }
   }, [res, navigate])
