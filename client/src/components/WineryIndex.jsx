@@ -45,6 +45,7 @@ export default function WineryIndex() {
       const countriesArr = [...new Set(allWineries.map(winery => winery.country))].filter(Boolean)
       setCountries(countriesArr)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters])
 
   useEffect(() => {
@@ -61,10 +62,9 @@ export default function WineryIndex() {
 
   return (
     <>
-      <h2> Select your next Oenologic Adventures... </h2>
       <div className='index-body'>
         <div className="filter-bar">
-          <select id="dropdown" name="country" value={filters.country} onChange={handleChange}>
+          <select id="dropdown" name="country" value={filters.country} onChange={handleChange} className="dropdown-filter">
             <option value="All">All</option>
             {countries.length > 0 &&
               countries.map(country => {
@@ -73,10 +73,11 @@ export default function WineryIndex() {
             }
           </select>
           <input id="search" name="search" placeholder='Search...' value={filters.search}
-            onChange={handleChange} />
-          <Link to={`/wineryIndex/${idRnd}`} className="randomBtn">Random</Link>
+            onChange={handleChange} className="search-filter"/>
+          <Link to={`/wineryIndex/${idRnd}`} className="randomBtn">Valiant Vagabond</Link>
         </div>
         <Container fluid className='wineryList overflow-auto'>
+        <h2> Select your next oenological Odyssey... </h2>
           {filteredWineries.map(winery => {
             const { _id, name, image } = winery
             return (
@@ -86,7 +87,9 @@ export default function WineryIndex() {
                 to={`/wineryIndex/${_id}`}
               >
                 <div className="single" style={{ backgroundImage: `url(${image})` }}>
-                  <div className="name">{name}</div>
+                  <div className="single-info">
+                    <div className="name">{name}</div>
+                  </div>
                 </div>
               </Col>
             )
