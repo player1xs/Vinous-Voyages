@@ -30,6 +30,50 @@ export default function Nav() {
   const [modalShow, setModalShow] = useState(false)
   const [loginModalShow, setLoginModalShow] = useState(false)
 
+  const [registerData, setRegisterData] = useState(
+    {
+      username: '',
+      email: '',
+      password: '',
+      passwordConfirmation: ''
+    })
+
+    const [loginData, setLoginData] = useState(
+      {
+        email: '',
+        password: ''
+      })
+
+  function handleChange(e) {
+    setRegisterData({ ...registerData, [e.target.name]: e.target.value })
+  }
+
+  function handleLoginChange(e) {
+    setLoginData({ ...loginData, [e.target.name]: e.target.value })
+  }
+
+  async function submitRegistration(e) {
+    e.preventDefault()
+    const res = await registerUser(registerData)
+    console.log(res)
+    if (res.status === 201) {
+      console.log('REGISTRATION SUCCESSFUL')
+      setModalShow(false)
+      setLoginModalShow(true)
+    }
+  }
+
+  async function submitLogin(e) {
+    e.preventDefault()
+    const res = await loginUser(loginData)
+    console.log(res)
+    if (res.status === 202) {
+      console.log('LOGIN SUCCESSFUL')
+      setLoginModalShow(false)
+      setToken(res.data.token)
+    }
+  }
+
   return (
     <>
       <div className='navbar'>
@@ -44,7 +88,7 @@ export default function Nav() {
               <span></span>
             </button>
           </header>
-        
+
           <Modal show={show} fullscreen={true} onHide={() => setShow(false)} className='indexs'>
             <Modal.Header closeButton>
             </Modal.Header>
@@ -76,13 +120,13 @@ export default function Nav() {
           <Modal.Header closeButton>
           </Modal.Header>
           <Modal.Body>
-            <Form className='create' method='POST'>
+            <form className='create'>
               <h1 className='text-center'>sign-up</h1>
-              <input type='text' name='username' placeholder='Username...' />
-              <input type='email' name='email' placeholder='Email...' />
-              <input type='password' name='password' placeholder='Password...' />
-              <input type='password' name='passwordConfirmation' placeholder='confirm password...' />
-              <button className=' btn btn-danger' type='submit' onClick={() => registerUser()}>register</button>
+              <input type='text' name='username' placeholder='Username...' onChange={handleChange} />
+              <input type='email' name='email' placeholder='Email...' onChange={handleChange} />
+              <input type='password' name='password' placeholder='Password...' onChange={handleChange} />
+              <input type='password' name='passwordConfirmation' placeholder='confirm password...' onChange={handleChange} />
+              <button className=' btn btn-danger' type='submit' onClick={submitRegistration}>Register</button>
               {/* Below will return a message to user if username taken, etc. Need to set this up. */}
               {/* {res && <p className='danger'>{res.data.message}</p>} */}
               <div className='sign in'>
@@ -94,7 +138,7 @@ export default function Nav() {
                   log-in
                 </button>
               </div>
-            </Form>
+            </form>
           </Modal.Body>
         </Modal>
         <Modal show={loginModalShow} halfscreen={true} onHide={() => setLoginModalShow(false)} className='centered-modal'>
@@ -102,18 +146,18 @@ export default function Nav() {
 
           </Modal.Header>
           <Modal.Body>
-            <Form className='log_in' method='POST'>
+            <form className='log_in'>
               <h1 className='text-center bold display-3 mb-4'>Login</h1>
-              <input type='email' name='email' placeholder='Email...' />
-              <input type='password' name='password' placeholder='Password...' />
-              <button className='btn btn-danger' type='submit' onClick={() => loginUser()}>Login</button>
+              <input type='email' name='email' placeholder='Email...' onChange={handleLoginChange}/>
+              <input type='password' name='password' placeholder='Password...' onChange={handleLoginChange}/>
+              <button className='btn btn-danger' type='submit' onClick={submitLogin}>Login</button>
               <button type="button" className="btn btn-danger" onClick={() => {
                 setModalShow(true)
                 setLoginModalShow(false)
               }}>
                 sign up
               </button>
-            </Form>
+            </form>
           </Modal.Body>
         </Modal>
       </div>
