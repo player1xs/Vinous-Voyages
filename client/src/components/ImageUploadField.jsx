@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 // eslint-disable-next-line react/prop-types
-export default function ImageUploadField({ formData, setFormData }){
+export default function ImageUploadField({ image, setImage }){
   
   async function handleImageUpload(e){
     const preset = import.meta.env.VITE_UPLOAD_PRESET
@@ -17,17 +17,14 @@ export default function ImageUploadField({ formData, setFormData }){
     // send form to endpoint
     const { data: { secure_url } } = await axios.post(endpoint, data)
     
-    setFormData({ ...formData, image: secure_url })
+    setImage(secure_url)
   }
 
   return (
     <>
-    {formData.image ?
-      // eslint-disable-next-line react/prop-types
-      <img src={formData.image} alt="Winery-Image" />
-      :
-      <imput type="file" name="image" onChange={handleImageUpload} />
-    }
+        <img src={image} alt="Winery-Image" />
+        <input type="hidden" name="image" value={image} className="imageUpload"/>
+        <input type="file" onChange={handleImageUpload} />
     </>
   )
 }

@@ -1,6 +1,6 @@
-import { useMemo, useEffect } from 'react'
+import { useMemo, useEffect, useState } from 'react'
 import { useActionData, useNavigate, Form } from 'react-router-dom'
-// import ImageUploadField from './ImageUploadField.jsx'
+import ImageUploadField from './ImageUploadField.jsx'
 import countryList from 'react-select-country-list'
 import Container from 'react-bootstrap/esm/Container'
 
@@ -28,6 +28,9 @@ export default function WineryCreate() {
   // function handleChange(e) {
   //   setFormData({ ...formData, [e.target.name]: e.target.value })
   // }
+
+  const [ image, setImage ] = useState('')
+
 
   useEffect(() => {
     if (res?.status === 201) {
@@ -90,9 +93,6 @@ export default function WineryCreate() {
             <label hidden htmlFor="range">Range</label>
             <input type="text" name="range" placeholder="Product range (separate by comma)" />
           </div>
-          <div className="create-image">
-            {/* <ImageUploadField/> */}
-          </div>
           <div className="create-contact">
             <label hidden htmlFor="website">Website</label>
             <input type="text" name="website" placeholder="Website URL" />
@@ -118,12 +118,15 @@ export default function WineryCreate() {
               <label hidden htmlFor="about">About</label>
               <textarea className="text-for-about" name="about" placeholder="About..." />
             </div>
+            <div className="create-image">
+            <ImageUploadField image={image} setImage={setImage} />
+            </div>
           </div>
           <div className="create-Btn-container">
         
           {/* Add message on server side to inform  visitor to login if haven't or other errors?*/}
           {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>}
-            <button className="createBtn" type="submit">Complete Form</button>
+            <button className="createBtn" type="submit">Complete Form - BOSHHH!!!</button>
           </div>
         </Form>
       </Container>

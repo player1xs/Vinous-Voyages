@@ -20,6 +20,25 @@
   margin-bottom: 10px;
 }
 
+.update-delete {
+  font-family: 'Metal', sans-serif;
+  font-size: 17px;
+  background-color: rgba(90, 1, 1, 0.84);
+  border: white double;
+  box-shadow: 7px 6px 10px rgba(0, 0, 0, 0.9);
+  text-decoration: underline;
+  color: white;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.update-delete-a {
+  color: white;
+  font-family: 'Metal', sans-serif;
+  font-size: 17px;
+}
+
 .title-on-single {
   font-size: 40px;
   font-family: 'Metal', sans-serif;
@@ -53,7 +72,6 @@
   box-shadow: 7px 10px 12px rgba(0, 0, 0, 0.661);
   object-fit: cover;
 }
-
 
 
 .text {
@@ -128,7 +146,7 @@ ul.varietals {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   margin-bottom: 25px;
   margin-top: 25px;
 }
@@ -169,3 +187,65 @@ ul.varietals {
   width: 75vw;
   height: 15vh;
 }
+
+.review {
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 1%;
+  padding: 10px 30px;
+  display: flex;
+  border-bottom: solid;
+}
+
+.reviewer-name {
+  width: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}
+
+
+.reviewed-box {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.review-delete {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.p-score {
+  margin-bottom: 0;
+  font-size: 30px;
+  font-family: 'Dancing Script', cursive;
+  color: rgb(93, 0, 0);
+}
+
+.p-text {
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 4%;
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .single-winery-container, .WineryInfo, .location-section {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px 0 20px;
+  }
+
+  .leaflet-container {
+    width: 450px;
+  }
+
+  .location-text-container, .imgDr {
+    margin-bottom: 30px;
+  }
+ }

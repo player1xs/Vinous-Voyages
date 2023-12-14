@@ -46,6 +46,7 @@ svg {
   width: 60px;
   background: none;
   border: none;
+  color: black;
 }
 
 .create {
@@ -202,4 +203,14 @@ nav {
 
 .header-title {
   padding-left: 15px
+}
+
+.user-icon {
+  color: rgb(255, 0, 0) !important;
+  height: 37px !important;
+}
+
+button.icon.btn.btn-primary {
+  margin: auto 0px;
+  padding-right: 20px;
 }

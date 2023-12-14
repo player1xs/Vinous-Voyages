@@ -1,4 +1,4 @@
-import { FaInstagram } from "react-icons/fa"
+import { FaInstagram, FaGithub } from "react-icons/fa"
 
 // import { TiSocialFacebookCircular } from "react-icons/ti"
 import { TiSocialFacebook } from "react-icons/ti"
@@ -8,12 +8,18 @@ export default function Footer(){
   return (
     <footer>
       <h1 className='footer-h1'>Vinous Voyages</h1>
-      &copy; Made by James, Benedict and Nasiim {new Date().getFullYear()}
+      <div className="github">
+      <FaGithub /> &copy; Made by  
+        <a href='https://github.com/player1xs' className="github-link"> Benedict</a>,
+        <a href='https://github.com/jamesbraid11' className="github-link"> James </a>, 
+        and <a href='' className="github-link"> Nasiim </a>
+        {new Date().getFullYear()}
+      </div>
       <div className='socials'>
-      <a href='#' className='footer-icon'><FaInstagram /></a>
+      <a href='https://www.instagram.com' className='footer-icon'><FaInstagram /></a>
       {/* <a href='#' className='social-icons'><TiSocialFacebookCircular /></a> */}
-      <TiSocialFacebook />
-      <a href='#' className='footer-icon'><FaXTwitter /></a>
+      <a href='https://www.facebook.com' className='footer-icon'><TiSocialFacebook /></a>
+      <a href='https://twitter.com' className='footer-icon'><FaXTwitter /></a>
       </div>
     </footer>
   )

@@ -36,8 +36,8 @@ export default function Mapbox() {
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
       {/* <MarkerClusterGroup */}
-        {/* // chunkedLoading
-        // iconCreateFunction={createCustomClusterIcon} */}
+        {/* chunkedLoading
+        iconCreateFunction={createCustomClusterIcon} */}
       {/* > */}
 
       {markers.map(marker => (

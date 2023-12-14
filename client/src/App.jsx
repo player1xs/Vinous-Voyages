@@ -4,7 +4,7 @@ import { Outlet, useNavigation } from 'react-router-dom'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 
-import Spinner from 'react-bootstrap/Spinner'
+import Loading from './images/wine-spinner.gif'
 
 function App() {
   const navigation = useNavigation()
@@ -17,7 +17,7 @@ function App() {
             <Outlet />
             :
             <div className='centred'>
-              <Spinner animation='border' />
+              <img src={Loading} alt="spinner" style={{width: '20rem' }} className="spinner"/>
             </div>
         }
       </main>

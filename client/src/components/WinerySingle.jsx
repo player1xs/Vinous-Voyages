@@ -19,13 +19,13 @@ const customIcon = new Icon({
 
   return (
     <>
-      {activeUser() === winery.owner._id &&
-        <div>
-          <button className="update-delete"><Link to={`/wineryIndex/${_id}/update`}>Update / Delete</Link></button>
-        </div>
-      }
       <div className="sglHeader">
         <Link to={`/wineryIndex`} className="backBtn">Back</Link>
+      {activeUser() === winery.owner._id &&
+        <div>
+          <button className="update-delete"><Link to={`/wineryIndex/${_id}/update`} className="update-delete-a">Update / Delete</Link></button>
+        </div>
+      }
       </div>
 
       <Container fluid className='single-winery-container overflow-auto'>
@@ -88,10 +88,18 @@ const customIcon = new Icon({
               const { _id, rating, text, owner } = review
               return (
                 <div key={_id} className="review">
-                  <p>{rating}</p>
-                  <p>{text}</p>
+                  <div className="reviewer-name">
                   <p>{owner.username}</p>
-                  {activeUser() === owner._id && <button className="delete" name="intent" value="delete">Delete</button>}
+                  </div>
+                  <div className="reviewed-box">
+                    <div className="reviewed-textbox">
+                      <p className="p-score">{rating}</p>
+                      <p className="p-text">{text}</p>
+                    </div>
+                    <div className="review-delete">
+                      {activeUser() === owner._id && <button className="delete" name="intent" value="delete">Delete</button>}
+                    </div>
+                  </div>
                 </div>
               )
             })}

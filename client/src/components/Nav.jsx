@@ -4,8 +4,10 @@ import { Link, useActionData, useNavigate } from 'react-router-dom'
 import Modal from 'react-bootstrap/Modal'
 
 import Button from 'react-bootstrap/Button'
-import userIcon from '../images/image.png'
+// import userIcon from '../images/image.png'
 import { Form } from 'react-router-dom'
+import { FaRegUserCircle } from "react-icons/fa";
+// import { FaUserCircle } from "react-icons/fa";
 
 import { setToken } from '../utils/helpers/common'
 
@@ -66,7 +68,8 @@ export default function Nav() {
             </nav>
           </Modal>
           <Button className="icon" onClick={toggleModal}>
-            <img className='logo rounded-circle d-inline-block align-center' src={userIcon} height='50' alt='user icon' />
+            <FaRegUserCircle fill="black" className="user-icon"/>
+            {/* <img className='logo rounded-circle d-inline-block align-center' src={userIcon} height='50' alt='user icon' /> */}
           </Button>
         </div>
 

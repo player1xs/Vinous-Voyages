@@ -66,6 +66,15 @@
 .createBtn {
   margin: 0 auto;
   margin-bottom:100px;
+  font-family: 'Metal', sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: rgba(90, 1, 1, 0.84);
+  border: white double;
+  box-shadow: 7px 6px 10px rgba(0, 0, 0, 0.9);
+  text-decoration: underline;
+  padding: 0 35px;
+  margin-bottom: 10px;
 }
 
 .create-Btn-container {
@@ -78,5 +87,15 @@ p.danger {
   text-align: center;
   color: rgb(94, 0, 0);
   font-weight: bolder;
+}
+
+.create-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageUpload {
+  height: 20px;
 }
 
