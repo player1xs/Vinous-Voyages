@@ -60,6 +60,9 @@ export default function Nav() {
                 <li className='nav-item'>
                   <Link to='/wineryIndex/create' className='nav-link' >Create Winery</Link>&nbsp;
                 </li>
+                <li className='nav-item'>
+                  <Link to='/profile' className='nav-link' >profile</Link>&nbsp;
+                </li>
                 {/* <Link to='/login'>Log-in</Link>&nbsp;
                 <Link to='/register'>Register</Link>&nbsp; */}
               </ul>
