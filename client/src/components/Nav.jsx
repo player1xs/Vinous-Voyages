@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 // import Model from 'react-bootstrap/Modal'
 import Modal from 'react-bootstrap/Modal'
 
 import Button from 'react-bootstrap/Button'
 import userIcon from '../images/image.png'
-import { Form } from 'react-router-dom'
 
 import { setToken } from '../utils/helpers/common'
 import { registerUser, loginUser } from '../utils/actions/auth'
@@ -38,11 +37,11 @@ export default function Nav() {
       passwordConfirmation: ''
     })
 
-    const [loginData, setLoginData] = useState(
-      {
-        email: '',
-        password: ''
-      })
+  const [loginData, setLoginData] = useState(
+    {
+      email: '',
+      password: ''
+    })
 
   function handleChange(e) {
     setRegisterData({ ...registerData, [e.target.name]: e.target.value })
@@ -106,8 +105,6 @@ export default function Nav() {
                 <li className='nav-item'>
                   <Link to='/profile' className='nav-link' >profile</Link>&nbsp;
                 </li>
-                {/* <Link to='/login'>Log-in</Link>&nbsp;
-                <Link to='/register'>Register</Link>&nbsp; */}
               </ul>
             </nav>
           </Modal>
@@ -126,7 +123,7 @@ export default function Nav() {
               <input type='email' name='email' placeholder='Email...' onChange={handleChange} />
               <input type='password' name='password' placeholder='Password...' onChange={handleChange} />
               <input type='password' name='passwordConfirmation' placeholder='confirm password...' onChange={handleChange} />
-              <button className=' btn btn-danger' type='submit' onClick={submitRegistration}>Register</button>
+              <button className='btn btn-danger' type='submit' onClick={submitRegistration}>Register</button>
               {/* Below will return a message to user if username taken, etc. Need to set this up. */}
               {/* {res && <p className='danger'>{res.data.message}</p>} */}
               <div className='sign in'>
@@ -148,9 +145,11 @@ export default function Nav() {
           <Modal.Body>
             <form className='log_in'>
               <h1 className='text-center bold display-3 mb-4'>Login</h1>
-              <input type='email' name='email' placeholder='Email...' onChange={handleLoginChange}/>
-              <input type='password' name='password' placeholder='Password...' onChange={handleLoginChange}/>
+              <input type='email' name='email' placeholder='Email...' onChange={handleLoginChange} />
+              <input type='password' name='password' placeholder='Password...' onChange={handleLoginChange} />
               <button className='btn btn-danger' type='submit' onClick={submitLogin}>Login</button>
+              {/* Add message on server side to inform  visitor to login if haven't or other errors?*/}
+              {/* {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>} */}
               <button type="button" className="btn btn-danger" onClick={() => {
                 setModalShow(true)
                 setLoginModalShow(false)

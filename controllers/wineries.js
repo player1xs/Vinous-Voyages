@@ -16,7 +16,7 @@ export const createWinery = async (req, res) => {
     return res.status(201).json(wineryToCreate)
   } catch (error) {
     console.log(error)
-    return res.status(400).json({ message: 'Please log in to add this winery' })
+    return res.status(400).json({ message: 'Please ensure that you are logged in and have entered all required (*) fields' })
   }
 }
 
@@ -32,7 +32,7 @@ export const getSingleWinery = async (req, res) => {
     return res.json(winery)
   } catch (error) {
     console.log(error)
-    return res.status(400).json(error)
+    return res.status(400).json({ message: 'Bad request, please try again' })
   }
 }
 
@@ -56,7 +56,7 @@ export const updateWinery = async (req, res) => {
     return res.status(202).json(winery)
   } catch (error) {
     console.log(error)
-    return res.status(400).json(error)
+    return res.status(400).json({ message: 'Please check all required (*) fields have been entered' })
   }
 }
 
@@ -90,7 +90,7 @@ export const createReview = async (req, res) => {
     return res.status(201).json(winery)
   } catch (error) {
     console.log(error)
-    return res.status(400).json(error)
+    return res.status(400).json({ message: 'Please ensure that you are logged in and have entered all required (*) fields' })
   }
 }
 
