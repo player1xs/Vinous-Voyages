@@ -73,17 +73,17 @@ export default function WineryCreate() {
         <Form className="form" method="POST">
           <div className="create-name">
             <label hidden htmlFor="name">Name</label>
-            <input type="text" name="name" placeholder="Winery Name" />
+            <input type="text" name="name" placeholder="* Winery Name" />
           </div>
           <div className="create-location">
-            <input list="countries" name="country" placeholder="Country"/>
+            <input list="countries" name="country" placeholder="* Country"/>
             <datalist id="countries">
               {options.map(country => {
                 return <option key={country.label} value={country.label}></option>
               })}
             </datalist>
             <label hidden htmlFor="region">Region</label>
-            <input type="text" name="region" placeholder="Region" />
+            <input type="text" name="region" placeholder="* Region" />
             <label hidden htmlFor="appelation">Appelation</label>
             <input type="text" name="appelation" placeholder="Appelation" />
           </div>
@@ -103,9 +103,9 @@ export default function WineryCreate() {
           </div>
           <div className="create-geolocation">
             <label hidden htmlFor="latitude">Geocode latitude</label>
-            <input type="number" step="any" name="latitude" placeholder="Geocode latitude" />
+            <input type="number" step="any" name="latitude" placeholder="* Geocode latitude" />
             <label hidden htmlFor="longitude">Geocode longitude</label>
-            <input type="number" step="any" name="longitude" placeholder="Geocode longitude" />
+            <input type="number" step="any" name="longitude" placeholder="* Geocode longitude" />
           </div>
           <div className="create-about">
             <div className="create-city">
@@ -116,18 +116,17 @@ export default function WineryCreate() {
             </div>
             <div className="about-div">
               <label hidden htmlFor="about">About</label>
-              <textarea className="text-for-about" name="about" placeholder="About..." />
+              <textarea className="text-for-about" name="about" placeholder=" * About..." />
             </div>
             <div className="create-image">
             <ImageUploadField image={image} setImage={setImage} />
             </div>
           </div>
           <div className="create-Btn-container">
-        
-          {/* Add message on server side to inform  visitor to login if haven't or other errors?*/}
-          {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>}
             <button className="createBtn" type="submit">Complete Form - BOSHHH!!!</button>
           </div>
+          {/* Add message on server side to inform  visitor to login if haven't or other errors*/}
+          {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>}
         </Form>
       </Container>
     </>

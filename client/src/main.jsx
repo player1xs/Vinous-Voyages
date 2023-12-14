@@ -10,18 +10,17 @@ import Home from './components/Home'
 import WineryIndex from './components/WineryIndex'
 import WinerySingle from './components/WinerySingle'
 import WineryCreate from './components/WineryCreate'
-import Register from './components/Register'
-import Login from './components/Login'
 import ErrorPage from './components/ErrorPage'
 import Rick from './components/Rick'
+import Profile from './components/Profile'
 
 // Loaders
 import { getAllWineries, getSingleWinery } from './utils/loaders/winery'
 
 // Actions
-import { registerUser, loginUser } from './utils/actions/auth'
 import { createOrDeleteReview, createWinery, updateOrDeleteWinery } from './utils/actions/winery'
 import WineryUpdate from './components/WineryUpdate'
+import { getSingleUser } from './utils/loaders/user'
 
 const router = createBrowserRouter([
   {
@@ -57,18 +56,13 @@ const router = createBrowserRouter([
         loader: async ({ params }) => getSingleWinery(params.wineryId)
       },
       {
-        path: '/register',
-        element: <Register />,
-        action: async ({ request }) => registerUser(request)
-      },
-      {
-        path: '/login',
-        element: <Login />,
-        action: async ({ request }) => loginUser(request)
-      },
-      {
         path: '/rick',
         element: <Rick />
+      },
+      {
+        path: '/profile',
+        element: <Profile />,
+        loader: getSingleUser
       }
     ]
   }

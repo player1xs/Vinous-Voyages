@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react'
-import { Link, useActionData, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 // import Model from 'react-bootstrap/Modal'
 import Modal from 'react-bootstrap/Modal'
 
 import Button from 'react-bootstrap/Button'
 // import userIcon from '../images/image.png'
-import { Form } from 'react-router-dom'
 import { FaRegUserCircle } from "react-icons/fa";
 // import { FaUserCircle } from "react-icons/fa";
 
 import { setToken } from '../utils/helpers/common'
+import { registerUser, loginUser } from '../utils/actions/auth'
 
 export default function Nav() {
 
@@ -18,20 +18,62 @@ export default function Nav() {
     setModalShow((prevShow) => !prevShow)
   }
 
+  // const navigate = useNavigate()
 
-  const res = useActionData()
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    if (res?.status === 201) {
-      setToken(res.data.token)
-      navigate('/login')
-    }
-  }, [res, navigate])
+  // useEffect(() => {
+  //   if (res?.status === 201) {
+  //     setToken(res.data.token)
+  //     navigate('/login')
+  //   }
+  // }, [res, navigate])
 
   const [show, setShow] = useState(false)
   const [modalShow, setModalShow] = useState(false)
   const [loginModalShow, setLoginModalShow] = useState(false)
+
+  const [registerData, setRegisterData] = useState(
+    {
+      username: '',
+      email: '',
+      password: '',
+      passwordConfirmation: ''
+    })
+
+  const [loginData, setLoginData] = useState(
+    {
+      email: '',
+      password: ''
+    })
+
+  function handleChange(e) {
+    setRegisterData({ ...registerData, [e.target.name]: e.target.value })
+  }
+
+  function handleLoginChange(e) {
+    setLoginData({ ...loginData, [e.target.name]: e.target.value })
+  }
+
+  async function submitRegistration(e) {
+    e.preventDefault()
+    const res = await registerUser(registerData)
+    console.log(res)
+    if (res.status === 201) {
+      console.log('REGISTRATION SUCCESSFUL')
+      setModalShow(false)
+      setLoginModalShow(true)
+    }
+  }
+
+  async function submitLogin(e) {
+    e.preventDefault()
+    const res = await loginUser(loginData)
+    console.log(res)
+    if (res.status === 202) {
+      console.log('LOGIN SUCCESSFUL')
+      setLoginModalShow(false)
+      setToken(res.data.token)
+    }
+  }
 
   return (
     <>
@@ -47,7 +89,7 @@ export default function Nav() {
               <span></span>
             </button>
           </header>
-        
+
           <Modal show={show} fullscreen={true} onHide={() => setShow(false)} className='indexs'>
             <Modal.Header closeButton>
             </Modal.Header>
@@ -62,8 +104,9 @@ export default function Nav() {
                 <li className='nav-item'>
                   <Link to='/wineryIndex/create' className='nav-link' >Create Winery</Link>&nbsp;
                 </li>
-                {/* <Link to='/login'>Log-in</Link>&nbsp;
-                <Link to='/register'>Register</Link>&nbsp; */}
+                <li className='nav-item'>
+                  <Link to='/profile' className='nav-link' >profile</Link>&nbsp;
+                </li>
               </ul>
             </nav>
           </Modal>
@@ -77,15 +120,15 @@ export default function Nav() {
           <Modal.Header closeButton>
           </Modal.Header>
           <Modal.Body>
-            <Form className='create' method='POST'>
+            <form className='create'>
               <h1 className='text-center'>sign-up</h1>
-              <input type='text' name='username' placeholder='Username...' />
-              <input type='email' name='email' placeholder='Email...' />
-              <input type='password' name='password' placeholder='Password...' />
-              <input type='password' name='passwordConfirmation' placeholder='confirm password...' />
-              <button className=' btn btn-danger' type='submit'>register</button>
+              <input type='text' name='username' placeholder='Username...' onChange={handleChange} />
+              <input type='email' name='email' placeholder='Email...' onChange={handleChange} />
+              <input type='password' name='password' placeholder='Password...' onChange={handleChange} />
+              <input type='password' name='passwordConfirmation' placeholder='confirm password...' onChange={handleChange} />
+              <button className='btn btn-danger' type='submit' onClick={submitRegistration}>Register</button>
               {/* Below will return a message to user if username taken, etc. Need to set this up. */}
-              {res && <p className='danger'>{res.data.message}</p>}
+              {/* {res && <p className='danger'>{res.data.message}</p>} */}
               <div className='sign in'>
                 Already have an account ?  &nbsp;
                 <button type="button" className="btn btn-danger" onClick={() => {
@@ -95,7 +138,7 @@ export default function Nav() {
                   log-in
                 </button>
               </div>
-            </Form>
+            </form>
           </Modal.Body>
         </Modal>
         <Modal show={loginModalShow} halfscreen={true} onHide={() => setLoginModalShow(false)} className='centered-modal'>
@@ -103,18 +146,20 @@ export default function Nav() {
 
           </Modal.Header>
           <Modal.Body>
-            <Form className='log_in' method='POST'>
+            <form className='log_in'>
               <h1 className='text-center bold display-3 mb-4'>Login</h1>
-              <input type='email' name='email' placeholder='Email...' />
-              <input type='password' name='password' placeholder='Password...' />
-              <button className='btn btn-danger' type='submit'> Login </button>
+              <input type='email' name='email' placeholder='Email...' onChange={handleLoginChange} />
+              <input type='password' name='password' placeholder='Password...' onChange={handleLoginChange} />
+              <button className='btn btn-danger' type='submit' onClick={submitLogin}>Login</button>
+              {/* Add message on server side to inform  visitor to login if haven't or other errors?*/}
+              {/* {res?.data?.message && <p className='danger bold mt-4'>{res.data.message}</p>} */}
               <button type="button" className="btn btn-danger" onClick={() => {
                 setModalShow(true)
                 setLoginModalShow(false)
               }}>
                 sign up
               </button>
-            </Form>
+            </form>
           </Modal.Body>
         </Modal>
       </div>

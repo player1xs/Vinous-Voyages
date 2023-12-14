@@ -71,7 +71,7 @@ export default function WineryUpdate() {
             </div>
             <div className="about-div">
               <label hidden htmlFor="about">About</label>
-              <textarea className="text-for-about" name="about" placeholder="About..." defaultValue={winery.about}/>
+              <textarea className="text-for-about" name="about" placeholder=" * About..." defaultValue={winery.about}/>
             </div>
             <div className="create-image">
               <ImageUploadField image={image} setImage={setImage} />
