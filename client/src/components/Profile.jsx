@@ -11,10 +11,10 @@ export default function Profile() {
         <img src={user.data.image} alt="Profile Picture" />
         <p>{user.data.username}</p>
         <p>{user.data.email}</p>
-        <ul>
+        <ul className='profile-wineries'>
           {user.data.wineriesCreated.map(winery => {
             const { _id, name } = winery
-            return <li key={_id}>{name}</li>
+            return <li key={_id} className='winery-list'>{name}</li>
           })}
         </ul>
       </div>
