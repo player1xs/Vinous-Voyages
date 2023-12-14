@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, useActionData, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 // import Model from 'react-bootstrap/Modal'
 import Modal from 'react-bootstrap/Modal'
 
@@ -8,6 +8,7 @@ import userIcon from '../images/image.png'
 import { Form } from 'react-router-dom'
 
 import { setToken } from '../utils/helpers/common'
+import { registerUser, loginUser } from '../utils/actions/auth'
 
 export default function Nav() {
 
@@ -16,16 +17,14 @@ export default function Nav() {
     setModalShow((prevShow) => !prevShow)
   }
 
+  // const navigate = useNavigate()
 
-  const res = useActionData()
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    if (res?.status === 201) {
-      setToken(res.data.token)
-      navigate('/login')
-    }
-  }, [res, navigate])
+  // useEffect(() => {
+  //   if (res?.status === 201) {
+  //     setToken(res.data.token)
+  //     navigate('/login')
+  //   }
+  // }, [res, navigate])
 
   const [show, setShow] = useState(false)
   const [modalShow, setModalShow] = useState(false)
@@ -83,9 +82,9 @@ export default function Nav() {
               <input type='email' name='email' placeholder='Email...' />
               <input type='password' name='password' placeholder='Password...' />
               <input type='password' name='passwordConfirmation' placeholder='confirm password...' />
-              <button className=' btn btn-danger' type='submit'>register</button>
+              <button className=' btn btn-danger' type='submit' onClick={() => registerUser()}>register</button>
               {/* Below will return a message to user if username taken, etc. Need to set this up. */}
-              {res && <p className='danger'>{res.data.message}</p>}
+              {/* {res && <p className='danger'>{res.data.message}</p>} */}
               <div className='sign in'>
                 Already have an account ?  &nbsp;
                 <button type="button" className="btn btn-danger" onClick={() => {
@@ -107,7 +106,7 @@ export default function Nav() {
               <h1 className='text-center bold display-3 mb-4'>Login</h1>
               <input type='email' name='email' placeholder='Email...' />
               <input type='password' name='password' placeholder='Password...' />
-              <button className='btn btn-danger' type='submit'> Login </button>
+              <button className='btn btn-danger' type='submit' onClick={() => loginUser()}>Login</button>
               <button type="button" className="btn btn-danger" onClick={() => {
                 setModalShow(true)
                 setLoginModalShow(false)

@@ -22,7 +22,7 @@ import { getAllWineries, getSingleWinery } from './utils/loaders/winery'
 import { registerUser, loginUser } from './utils/actions/auth'
 import { createOrDeleteReview, createWinery, updateOrDeleteWinery } from './utils/actions/winery'
 import WineryUpdate from './components/WineryUpdate'
-import { getSingleUser } from './utils/loaders/users'
+import { getSingleUser } from './utils/loaders/user'
 
 const router = createBrowserRouter([
   {
