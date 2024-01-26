@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import axios from 'axios'
+import axios from "axios"
 
 // eslint-disable-next-line react/prop-types
 export default function ImageUploadField({ image, setImage }){
