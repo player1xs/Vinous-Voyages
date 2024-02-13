@@ -1,31 +1,31 @@
-Project Three - Vinous Voyages
+# Project Three - Vinous Voyages
 
-Description
+## Description
 
 Project Three was a group  project to create a MERN full stack application with CRUD capabilities. Create a server-side database (MondoDB) and connect it with a React frontend using an Express API to serve our data.
 
 
-Deployment Link
+## Deployment Link
 
 https://bn-vinous-voyages-ee552d981c31.herokuapp.com/
 
-Instructions 
+## Instructions 
 
 Follow the link and enjoy the site. No need to install any packages. Click and play.
 
-Timeframe & Team
+## Timeframe & Team
 
 This was a group project with James Baird, Benedict Norton (myself), and Nasiim Nuur.
 The project was officially to be worked on from the 6th Dev(Wednesday) until 15th Dec(Fri) with presentations being held on that 15th.
 
-Technology
-Technologies used:
+## Technology
+### Technologies used:
 VS Code
 Excalidraw
 Heroku
 Opera browser (Chromatic)
 
-Packages for VS Code used:
+### Packages for VS Code used:
 React
 React Router Dom
 React Bootstrap
@@ -34,15 +34,15 @@ React Leaflet (Map package)
 MongoDB
 Sass
 
-Languages used:
+### Languages used:
 HTML
 Javascript
 CSS/ SCSS (with Sass)
 
-Brief
+## Brief
 This project was to demonstrate our skill in creating a backend server and then feeding the information to a frontend application.
 
-Requirements:
+### Requirements:
 Build a full-stack application by making your own backend and your own front-end.
 Use an Express API to serve your data from a Mongo database.
 Consume your API with a separate front-end built with React.
@@ -51,7 +51,7 @@ Implement thoughtful user stories/wireframes that are significant enough to help
 Have a visually impressive design to kick your portfolio up a notch.
 Be deployed online.
 
-Planning
+## Planning
 We had a decent conversation about what topic our project will be on first with every member pitching at least one idea. We settled on my pitch which was about wineries of the world; as my idea was the most fleshed out; while pitching we even started making notes which ended up being our pseudocode.
 
 Once the idea was in place we put some wireframes together (below). After which we converted our pseudocode onto a Trello board plan, so we could see where everyone was. When the Trello board was in place, we started assigning some tasks from the get go and mostly worked independently.
@@ -59,7 +59,7 @@ Once the idea was in place we put some wireframes together (below). After which 
 It was important to me that we had regular check-ins. Therefore we had a morning standup together, to see what we got up to after hours (if we did anything), and an end-of-day check-in. We ended up having additional quick meetings throughout the day when one of us finished a larger task in a show-and-tell manner; this allowed other members to take that code and work on it if it intertwined with their work; or for example was ready to be styled.
 
 
-Wireframe
+### Wireframe
 The first step in planning was generating  wireframes. Below you see how our backend communicates with the front-end, the front-end communicating with its multi-page setup, and page layout.
 
 
@@ -68,17 +68,17 @@ The first step in planning was generating  wireframes. Below you see how our bac
 
 
 
-Pseudocode/Trello
+### Pseudocode/Trello
 We first started writing a pseudocode/to-do list, which we quickly converted to a Trello board. Here we could see what each member would work on. When I was ready to move to a new task, I would pick a tab -> assign my name -> move to the ‘in progress’ column -> once completed add to the ‘completed’ pile. We made sure to have an MVP section and a reach goal/icebox section; as we had several ideas we wanted to add.
 
 ![1](https://github.com/player1xs/Space-Invaders/assets/148089820/51daf30c-1dd2-4462-a53f-c17d848b66b5)
 
 
-Build/ Code Process
+## Build/ Code Process
 THE BELOW PARTS ARE ONLY WHAT I HAVE WORKED ON MYSELF, OR COLLABORATIVELY WITH MY TEAM. 
 TO SEE NASSIM OR JAMES’ SOLO INPUTS PLEASE REFER TO THEIR README.
 
-Backend setup
+### Backend setup
 First I set out to create the backend/server-side of our application. After installing packages mentioned above; I got to writing.
 
 Here is the schema I created for the main part of our database (which is about wineries). Some fields in the schema were added later; for example: the latitude and longitude fields; because of the Leaflet Map Module I used, as it required a certain input. With each input adding the type that can be input and of course mandatory fields which will be required for filtering options.
@@ -129,7 +129,7 @@ SECRET, CONNECTION STRING, and PORT can be seen in the two images above.
 After the server was set up, we sat down as a team and had a round of testing to see whether all functionalities are working. And all our methods carried out correctly.
 
 
-Leaflet
+### Leaflet
 
 Leaflet is a React module similar to Mapbox. This module allowed me to display a map of the world, add my own marker and even customise it.
 
@@ -156,7 +156,7 @@ I also added an additional mapbox on the single winery pages, near the contact/ 
 
 ![14](https://github.com/player1xs/Space-Invaders/assets/148089820/c86ca7f8-05d5-40d1-a900-7b75443c2a6c)
 
-Hero Carousel
+### Hero Carousel
 
 I set up an image gallery on the homepage/ landing page. Once again, a straightforward react application. Installed the packages and imported the necessary actions.
 
@@ -165,14 +165,14 @@ And a function to display the images, and move through the carousel with arrow k
 
 ![15](https://github.com/player1xs/Space-Invaders/assets/148089820/a1fa17ca-5f05-4a47-88c3-ee8f0007ce37)
 
-Error Page
+### Error Page
 Created a quick path in main.jsx to a component named: ErrorPage.jsx. In case a file path is lost or address is wrongly entered the user would land on a 404 page. Which displays a themed image and sends you back to the main page (actually first the user will be redirected to a RickRoll and then back to the main index).
 
 ![16](https://github.com/player1xs/Space-Invaders/assets/148089820/0fd6b4fd-fd0c-475c-9e47-e21228ca4bf1)
 
 ![17](https://github.com/player1xs/Space-Invaders/assets/148089820/35ad9436-4292-4d81-b355-5bf4453ce0bb)
 
-Winery creation
+### Winery creation
 Working together with James, we structured a user-friendly winery creation page. James handled a lot of the logic here to connect the front end to the server-side database.
 I meanwhile created an account with cloudinary, a page that would handle our images on a cloud for all the wineries.
 
@@ -184,7 +184,7 @@ Then added a line to the create Form. Which i Imported ImageUploadField from the
 
 ![19](https://github.com/player1xs/Space-Invaders/assets/148089820/26f0e84d-8d6a-4729-88f5-32fdcfba7c15)
 
-Index Page
+### Index Page
 Now it is time to start displaying our information. Once again using our LoaderData we pull information from our database. James created a filter and incredibly clever search function.
 The information on the index page is minimal, so I only pulled images and names. Each winery link to click was the entire image displaying the name in the bottom right, using flexbox and some clever layers of gradient shading; and threw in a little hover effect for a little extra pizzazz.
 
@@ -194,7 +194,7 @@ The container holding our winery list has bootstrap overflow capabilities. So th
 
 ![22](https://github.com/player1xs/Space-Invaders/assets/148089820/2cc247d8-a785-405a-b5b2-5dbba7e1d053)
 
-Winery Single page
+### Winery Single page
 
 This where all our information from the database really came in which we extracted and brought in with our LoaderData. 
 Additionally, I used the Leaflet Mapbox here again with a custom icon.
@@ -214,31 +214,31 @@ Assigned all parts of information into their own <divs> so I could manipulate th
 
 
 
-Styling
+### Styling
 I have mentioned styling a bit already and shown some images of the finished page. Therefore I wont go into too much detail about the SCSS written. Styling was done with a mix of Sass and Bootstrap.
 Once the team settled on a colour scheme. I cracked on and styled the entire application. All gradients, shading, flex layouts, strict image sizing, and flexible text boxes if more text is required.
 Feel free to browse through .scss files for anything in particular. Each file corresponds to their related .jsx file and everything has its own className for ease of use/identification/targeting.
 
 
 
-Challenges
+## Challenges
 The biggest challenge I faced was trying to target specific items within the LeafletMap and Carousel packages. As they basically came somewhat prepackaged. Some of the nested classNames couldn’t always be targeted or showed no change as they had their own styling with a higher priority - but none of that could be seen by me.
 But with some additional <divs> and classNames, I made due and got everything the way I wanted in the end.
 
-Win
+## Win
 Although challenging to target for styling; when I got the map working with custom markers I was over the moon. How clean it was to implement with our database.
 And having gone over my notes in advance with a few additional practice sessions - I managed to write the entire server-side in an afternoon, solo. Through team testing we found only 2 spelling mistakes; which were easily remedied and quickly found.
 
-Takeaways
+## Takeaways
 Although the server was quick to set up, there is more to be understood. 
 Going into it, the amount of logic handling on the front-end, ended up much bigger than I expected. I know not to take it for granted or underestimate it. (We did add a fair bit of error handling and fallbacks to make the application airtight)
 
 
-Bugs
+## Bugs
 Once a review is posted, sometimes a user can’t leave a second one, but sometimes can.
 On the create field. If image upload is clicked and the file selected and then the complete form button is clicked before the image has loaded on the form it would not load/added to the database. (this can be fixed by streamlining the useState with some better logic).
 
-Future Improvements
+## Future Improvements
 Function to differentiate the user 1. Winery Owner 2. Visitor.
 Users can earn badges eg: amount of places left, reviews left, etc..
 Profile page displays favourite wineries + wishlist.
